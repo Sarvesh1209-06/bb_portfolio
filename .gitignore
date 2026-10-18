@@ -1,0 +1,7 @@
+# Logs and scratch scripts
+*.py
+*.log
+*.png
+font_ref.jpg
+.gemini/
+__pycache__/

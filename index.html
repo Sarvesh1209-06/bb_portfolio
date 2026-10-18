@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth no-js">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BIG BUDDY FITNESS STUDIO | Kangeyam's Premier Gym</title>
+  <meta name="description" content="Transform your fitness at Big Buddy Fitness Studio in Kangeyam. State-of-the-art strength equipment, Matrix machines, functional turf, and champion-led coaching."/>
+  
+  <!-- Progressive Enhancement: replace 'no-js' with 'js' as early as possible -->
+  <script>
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+  </script>
+
+  <!-- Favicon / Brand Monogram -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2310110F'/><path d='M28 25 h24 a16 16 0 0 1 0 32 h-24 z M28 43 h26 a16 16 0 0 1 0 32 h-26 z' fill='none' stroke='%23B7F34A' stroke-width='10' stroke-linejoin='round'/></svg>"/>
+
+  <!-- Google Fonts: Outfit (Display & Headlines) + Plus Jakarta Sans (Body & Inktraps) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet"/>
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#10110F",
+            "surface-dim": "#0C0F06",
+            "surface-bright": "#282B20",
+            "surface-container-lowest": "#0C0F06",
+            "surface-container-low": "#151812",
+            "surface-container": "#1B1E19",
+            "surface-container-high": "#242820",
+            "surface-container-highest": "#2E3328",
+            "surface-variant": "#282B20",
+            "primary": "#FFFFFF",
+            "primary-container": "#B7F34A",
+            "primary-secondary": "#D8FF9A",
+            "on-primary-container": "#10110F",
+            "on-surface": "#F5F8F1",
+            "on-surface-variant": "#A2A89B",
+            "outline": "#434936",
+            "outline-variant": "#282B20",
+            "border-subtle": "#242820",
+            "border-light": "#32362A"
+          },
+          fontFamily: {
+            "display": ["Outfit", "sans-serif"],
+            "body": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-xl": ["Outfit", "sans-serif"],
+            "headline-lg": ["Outfit", "sans-serif"],
+            "headline-md": ["Outfit", "sans-serif"],
+            "headline-sm": ["Outfit", "sans-serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "sm": "0.5rem",
+            "DEFAULT": "1rem",
+            "md": "1.25rem",
+            "lg": "1.75rem",
+            "xl": "2.5rem",
+            "full": "9999px"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html {
+        scroll-behavior: smooth;
+        background-color: #10110F;
+        color: #F5F8F1;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #10110F;
+        color: #F5F8F1;
+        overflow-x: hidden;
+      }
+      h1, h2, h3, h4, .font-display {
+        font-family: 'Outfit', sans-serif;
+      }
+      section[id] {
+        scroll-margin-top: 5.5rem;
+      }
+    }
+
+    /* ==================== CULT.FIT READING PROGRESS BAR ==================== */
+    #scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #B7F34A 0%, #D8FF9A 50%, #B7F34A 100%);
+      z-index: 100;
+      width: 0%;
+      box-shadow: 0 0 12px rgba(183, 243, 74, 0.8), 0 0 4px #B7F34A;
+      pointer-events: none;
+      transition: width 0.05s ease-out;
+    }
+
+    /* ==================== CULT.FIT 3D PERSPECTIVE CARDS ==================== */
+    .perspective-container {
+      perspective: 1200px;
+    }
+    
+    .card-3d {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+      will-change: transform;
+    }
+
+    /* Dynamic cursor spotlight reflection */
+    .card-3d-shine {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: radial-gradient(circle 320px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(183, 243, 74, 0.14), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 15;
+    }
+    .card-3d:hover .card-3d-shine {
+      opacity: 1;
+    }
+
+    /* 3D Elevated Layering */
+    .card-3d-content {
+      transform: translateZ(24px);
+      transform-style: preserve-3d;
+    }
+    .card-3d-badge {
+      transform: translateZ(36px);
+      transform-style: preserve-3d;
+    }
+
+    /* ==================== CULT.FIT SCROLL REVEALS & 3D ROTATION ==================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 3D Perspective Flip-Up entrance on scroll */
+    .reveal-3d {
+      opacity: 0;
+      transform: perspective(1200px) rotateX(12deg) translateY(40px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-3d.is-visible {
+      opacity: 1;
+      transform: perspective(1200px) rotateX(0deg) translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-32px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-left.is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(32px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-right.is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-scale.is-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Stagger Delays */
+    .delay-75  { transition-delay: 75ms; }
+    .delay-150 { transition-delay: 150ms; }
+    .delay-225 { transition-delay: 225ms; }
+    .delay-300 { transition-delay: 300ms; }
+    .delay-375 { transition-delay: 375ms; }
+    .delay-450 { transition-delay: 450ms; }
+    .delay-525 { transition-delay: 525ms; }
+    .delay-600 { transition-delay: 600ms; }
+
+    /* ==================== HERO LOAD & SCROLL ZOOM STYLES ==================== */
+    #hero-bg-wrapper {
+      will-change: transform, filter;
+      transform-origin: center center;
+    }
+    #hero-content {
+      will-change: transform, opacity;
+      transform-origin: center top;
+    }
+
+    .hero-animate-badge {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: heroFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    }
+    .hero-animate-title {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+    }
+    .hero-animate-sub {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    }
+    .hero-animate-cta {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+    }
+    .hero-animate-rating {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+    }
+
+    @keyframes heroFadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ==================== ACCESSIBILITY & FALLBACKS ==================== */
+    html.no-js .reveal,
+    html.no-js .reveal-3d,
+    html.no-js .reveal-left,
+    html.no-js .reveal-right,
+    html.no-js .reveal-scale,
+    html.no-js .hero-animate-badge,
+    html.no-js .hero-animate-title,
+    html.no-js .hero-animate-sub,
+    html.no-js .hero-animate-cta,
+    html.no-js .hero-animate-rating {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal,
+      .reveal-3d,
+      .reveal-left,
+      .reveal-right,
+      .reveal-scale,
+      .card-3d,
+      .hero-animate-badge,
+      .hero-animate-title,
+      .hero-animate-sub,
+      .hero-animate-cta,
+      .hero-animate-rating {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+      }
+      #hero-bg-wrapper, #hero-content {
+        transform: none !important;
+      }
+    }
+
+    /* Accessible Focus Rings */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 2px solid #B7F34A;
+      outline-offset: 3px;
+    }
+
+    /* Cult.fit High-Voltage Neon Glows */
+    .neon-glow-sm {
+      box-shadow: 0 0 15px -3px rgba(183, 243, 74, 0.25);
+    }
+    .neon-glow-md {
+      box-shadow: 0 0 25px -4px rgba(183, 243, 74, 0.35);
+    }
+  </style>
+</head>
+
+<body class="bg-surface font-body text-on-surface antialiased selection:bg-primary-container selection:text-surface flex flex-col min-h-screen">
+
+  <!-- Cult.fit Neon Scroll Reading Progress Bar -->
+  <div id="scroll-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-border-subtle transition-all duration-300" id="main-header">
+    <div class="h-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
+      
+      <!-- Brand Logo / Wordmark -->
+      <a href="#home" class="flex items-center gap-3.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-container rounded-lg p-1" aria-label="Big Buddy Fitness Studio Home">
+        <div class="w-10 h-10 rounded-xl bg-surface-container-high border border-primary-container/30 flex items-center justify-center text-primary-container group-hover:bg-primary-container group-hover:text-surface transition-all duration-300">
+          <!-- Monogram Icon -->
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 4h7a4 4 0 0 1 0 8H6z"/>
+            <path d="M6 12h8a4 4 0 0 1 0 8H6z"/>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg sm:text-xl font-display font-extrabold tracking-tight uppercase text-white leading-none">
+            BIG BUDDY <span class="text-primary-container">FITNESS</span>
+          </span>
+          <span class="text-[10px] tracking-widest text-on-surface-variant font-bold uppercase mt-0.5">STUDIO • KANGEYAM</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden xl:flex items-center gap-1 bg-surface-container-low/80 p-1.5 rounded-full border border-border-subtle" aria-label="Main Navigation">
+        <a href="#home" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface hover:text-white hover:bg-surface-container transition-all" data-section="home">Home</a>
+        <a href="#about" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="about">About</a>
+        <a href="#facilities" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="facilities">Facilities</a>
+        <a href="#trainers" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="trainers">Trainers</a>
+        <a href="#membership" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="membership">Membership</a>
+        <a href="#reviews" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="reviews">Reviews</a>
+        <a href="#gallery" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="gallery">Gallery</a>
+        <a href="#contact" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="contact">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <!-- Join CTA Button -->
+        <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20know%20about%20your%20gym%20membership%20plans." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="bg-primary-container text-surface px-5 sm:px-6 py-2.5 rounded-full font-display font-extrabold text-xs sm:text-sm tracking-wider uppercase hover:bg-primary-secondary transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-md flex items-center gap-2"
+           aria-label="Join Big Buddy Fitness Studio on WhatsApp">
+          <span class="material-symbols-outlined text-[18px]">bolt</span>
+          <span>JOIN NOW</span>
+        </a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button id="mobile-menu-btn" 
+                type="button"
+                class="xl:hidden w-10 h-10 rounded-full bg-surface-container-high border border-border-light text-on-surface flex items-center justify-center hover:text-primary-container hover:border-primary-container/40 transition-colors focus:outline-none" 
+                aria-expanded="false" 
+                aria-controls="mobile-menu-drawer"
+                aria-label="Toggle navigation menu">
+          <span id="menu-icon" class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer / Dropdown Menu -->
+    <div id="mobile-menu-drawer" class="hidden xl:hidden bg-surface-container/98 border-b border-border-subtle backdrop-blur-2xl px-6 py-6 transition-all duration-300">
+      <nav class="flex flex-col gap-2" aria-label="Mobile Navigation">
+        <a href="#home" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-white hover:bg-surface-container-high hover:text-primary-container transition-colors">
+          <span>Home</span>
+          <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        </a>
+        <a href="#about" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-on-surface-variant hover:bg-surface-container-high hover:text-primary-container transition-colors">
+          <span>About Studio</span>
+          <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        </a>
+        <a href="#facilities" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-on-surface-variant hover:bg-surface-container-high hover:text-primary-container transition-colors">
+          <span>Facilities & Equipment</span>
+          <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        </a>
+        <a href="#trainers" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-on-surface-variant hover:bg-surface-container-high hover:text-primary-container transition-colors">
+          <span>Trainers & Coaching</span>
+          <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        </a>
+        <a href="#membership" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-on-surface-variant hover:bg-surface-container-high hover:text-primary-container transition-colors">
+          <span>Membership Plans</span>
+          <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        </a>
+        <a href="#reviews" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-on-surface-variant hover:bg-surface-container-high hover:text-primary-container transition-colors">
+          <span>Google Reviews (4.7★)</span>
+          <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        </a>
+        <a href="#gallery" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-on-surface-variant hover:bg-surface-container-high hover:text-primary-container transition-colors">
+          <span>Studio Gallery</span>
+          <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        </a>
+        <a href="#contact" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-on-surface-variant hover:bg-surface-container-high hover:text-primary-container transition-colors">
+          <span>Location & Hours</span>
+          <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        </a>
+      </nav>
+
+      <div class="mt-6 pt-5 border-t border-border-subtle flex flex-col gap-3">
+        <a href="tel:+919942556797" class="w-full py-3 px-4 rounded-full bg-surface-container-high text-white font-semibold text-sm flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors">
+          <span class="material-symbols-outlined text-primary-container text-lg">call</span>
+          <span>Call: +91 99425 56797</span>
+        </a>
+        <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20know%20about%20your%20gym%20membership%20plans." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="w-full py-3 px-4 rounded-full bg-primary-container text-surface font-display font-extrabold text-sm tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg">
+          <span class="material-symbols-outlined text-lg">chat</span>
+          <span>WhatsApp Enquiry</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-20">
+
+    <!-- ==================== 1. HERO SECTION WITH SCROLL-DRIVEN ZOOM TRANSITION ==================== -->
+    <section id="home" class="relative min-h-[95vh] flex items-center justify-center px-5 sm:px-8 lg:px-12 overflow-hidden py-24 lg:py-32">
+      <!-- Background: Real Client Gym Photo 1 with Scroll Zoom-to-Transition -->
+      <div class="absolute inset-0 z-0 overflow-hidden" id="hero-bg-wrapper">
+        <img id="hero-img"
+             src="photo1.jpg" 
+             onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Suu2AFrcag4yUgu5f8oT-7ckiOe1L6xZ26A3u7gnvON5MesPUPMbPdNGP4FrTqCXILKiGkcMnut6_P_Uj9eLXWPLFrcaM00PxQeJ_YmF55hGt0p65qR9FOubbU-QIukyg_plcISA=w446-h298-k-no';" 
+             alt="Real gym interior floor at Big Buddy Fitness Studio Kangeyam showing turf track, Matrix equipment, tire flip and weight benches" 
+             class="w-full h-full object-cover object-center scale-105 filter brightness-50 contrast-125 transition-transform duration-100 ease-out" />
+        <!-- Cult.fit high-contrast moody dark gradient overlays -->
+        <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/85 to-surface/40"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/70 to-transparent"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(183,243,74,0.1),transparent_50%)]"></div>
+      </div>
+
+      <div id="hero-content" class="max-w-7xl w-full mx-auto relative z-10 flex flex-col items-start gap-8 transition-transform duration-100 ease-out">
+        
+        <!-- Studio Location Badge -->
+        <div class="hero-animate-badge inline-flex items-center gap-3 bg-surface-container/90 backdrop-blur-md px-4 py-2 rounded-full border border-primary-container/30 shadow-lg">
+          <span class="flex h-2.5 w-2.5 rounded-full bg-primary-container animate-pulse"></span>
+          <span class="text-xs sm:text-sm font-bold text-on-surface tracking-wider uppercase font-display">
+            Kangeyam’s Premier Gym &amp; Fitness Studio
+          </span>
+        </div>
+
+        <!-- Hero Headline (Inspired by Cult.fit boldness & Santrio display typography) -->
+        <div class="flex flex-col gap-2 max-w-5xl">
+          <h1 class="hero-animate-title font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white uppercase leading-[1.02]">
+            BUILT STRONGER.<br/>
+            <span class="text-primary-container">BUILT TOGETHER.</span>
+          </h1>
+          <p class="hero-animate-sub text-base sm:text-xl md:text-2xl text-on-surface-variant font-medium max-w-2xl mt-4 leading-relaxed">
+            Train with purpose. Build strength. Become a stronger version of yourself.
+          </p>
+        </div>
+
+        <!-- Hero Action CTAs -->
+        <div class="hero-animate-cta flex flex-wrap items-center gap-4 pt-3 w-full sm:w-auto">
+          <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20know%20about%20your%20gym%20membership%20plans." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="w-full sm:w-auto bg-primary-container text-surface px-8 py-4 rounded-full font-display font-extrabold text-sm sm:text-base tracking-wider uppercase hover:bg-primary-secondary transition-all transform hover:scale-105 active:scale-95 shadow-2xl flex items-center justify-center gap-3">
+            <span class="material-symbols-outlined text-[22px]">bolt</span>
+            <span>START YOUR FITNESS JOURNEY</span>
+          </a>
+
+          <a href="#facilities" 
+             class="w-full sm:w-auto bg-surface-container-high/90 hover:bg-surface-container-highest border border-border-light text-white px-8 py-4 rounded-full font-display font-bold text-sm sm:text-base tracking-wider uppercase transition-all flex items-center justify-center gap-2">
+            <span>EXPLORE THE GYM</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+          </a>
+        </div>
+
+        <!-- Google Rating Trust Strip -->
+        <div class="hero-animate-rating flex flex-wrap items-center gap-4 sm:gap-6 mt-4 pt-6 border-t border-border-subtle w-full max-w-2xl">
+          <div class="flex items-center gap-2">
+            <div class="flex text-primary-container">
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <span class="font-display font-bold text-white text-lg">4.7 / 5</span>
+          </div>
+
+          <div class="hidden sm:block h-4 w-[1px] bg-border-light"></div>
+
+          <div class="text-sm text-on-surface-variant font-medium">
+            Based on <a href="https://www.google.com/maps/place/Big+Buddy+fitness+studio/@11.011028,77.5532749" target="_blank" rel="noopener noreferrer" class="text-white font-bold underline hover:text-primary-container transition-colors">35 Google Reviews</a> in Kangeyam
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 2. TRUST & STATS STRIP ==================== -->
+    <section class="bg-surface-container-lowest py-10 border-y border-border-subtle relative z-20" aria-label="Key Gym Statistics">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+        
+        <div class="reveal delay-75 flex flex-col gap-1.5 border-l-2 border-primary-container pl-4">
+          <span class="font-display font-extrabold text-3xl sm:text-4xl text-primary-container">4.7 ★</span>
+          <span class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider font-display">Google Rating</span>
+          <span class="text-xs text-on-surface-variant">Top-rated local destination</span>
+        </div>
+
+        <div class="reveal delay-150 flex flex-col gap-1.5 border-l-2 border-primary-container pl-4">
+          <span class="font-display font-extrabold text-3xl sm:text-4xl text-primary-container">35+</span>
+          <span class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider font-display">Google Reviews</span>
+          <span class="text-xs text-on-surface-variant">Verified member experiences</span>
+        </div>
+
+        <div class="reveal delay-225 flex flex-col gap-1.5 border-l-2 border-primary-container pl-4">
+          <span class="font-display font-extrabold text-3xl sm:text-4xl text-primary-container">EXPERT</span>
+          <span class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider font-display">Coaching</span>
+          <span class="text-xs text-on-surface-variant">Tailored technique guidance</span>
+        </div>
+
+        <div class="reveal delay-300 flex flex-col gap-1.5 border-l-2 border-primary-container pl-4">
+          <span class="font-display font-extrabold text-3xl sm:text-4xl text-primary-container">100%</span>
+          <span class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider font-display">Strength Focus</span>
+          <span class="text-xs text-on-surface-variant">Matrix machines &amp; turf track</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 3. ABOUT SECTION WITH 3D HOVER ==================== -->
+    <section id="about" class="py-24 px-5 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full relative z-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- About Left Column -->
+        <div class="lg:col-span-6 flex flex-col gap-6 reveal-left">
+          <div class="inline-flex items-center gap-2">
+            <span class="w-6 h-[2px] bg-primary-container"></span>
+            <span class="text-xs sm:text-sm font-display font-extrabold text-primary-container uppercase tracking-widest">ABOUT BIG BUDDY FITNESS</span>
+          </div>
+
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white uppercase leading-[1.1]">
+            MORE THAN A GYM.<br/><span class="text-primary-container">YOUR FITNESS COMMUNITY.</span>
+          </h2>
+
+          <p class="text-base sm:text-lg text-on-surface-variant leading-relaxed">
+            Located on the 1st Floor of Thirumagal Plazza on Tiruppur Road (above Trends) in Kangeyam, <strong class="text-white">BIG BUDDY FITNESS STUDIO</strong> is dedicated to helping individuals build real, functional strength and sustainable discipline.
+          </p>
+
+          <p class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+            Whether your journey is just beginning or you are taking competitive bodybuilding to the next level, our studio provides a high-energy training ground equipped with Matrix Fitness machinery, dedicated Olympic racks, a turf sprint track, and hands-on professional coaching.
+          </p>
+
+          <!-- Core Value Cards with 3D Spotlight Tilt -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+            
+            <div class="card-3d bg-surface-container p-6 rounded-2xl border border-border-subtle hover:border-primary-container/40 flex flex-col gap-3 shadow-lg">
+              <div class="card-3d-shine"></div>
+              <div class="card-3d-content flex flex-col gap-3">
+                <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container">
+                  <span class="material-symbols-outlined text-[28px]">group</span>
+                </div>
+                <h3 class="font-display font-bold text-lg text-white">Supportive Environment</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  A motivating culture where members encourage and push each other to reach new physical milestones.
+                </p>
+              </div>
+            </div>
+
+            <div class="card-3d bg-surface-container p-6 rounded-2xl border border-border-subtle hover:border-primary-container/40 flex flex-col gap-3 shadow-lg">
+              <div class="card-3d-shine"></div>
+              <div class="card-3d-content flex flex-col gap-3">
+                <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container">
+                  <span class="material-symbols-outlined text-[28px]">verified</span>
+                </div>
+                <h3 class="font-display font-bold text-lg text-white">Expert Guidance</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  Attentive supervision and customized workout programming tailored to your body and goals.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- About Right Column: Real Gym Photo 2 with 3D Depth Card -->
+        <div class="lg:col-span-6 relative reveal-right">
+          <div class="card-3d relative rounded-3xl overflow-hidden border border-border-light shadow-2xl group cursor-pointer" id="about-img-trigger" title="Click to view full photo">
+            <div class="card-3d-shine"></div>
+            <img src="photo2.jpg" 
+                 onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QCInq9alkqAvRw2vce0yEQd4EHQTUssPR0NhJ0cBEqRh2qVa4BryVBIwpAiwKUnogznZiayk5ggi0c_7aglK_gX-CbPiwmGn9yNzw7oeLLyJC2WHZYFovuz63gLhD0wJJ0FLhuJA=w203-h135-k-no';" 
+                 alt="Real training ground photo inside Big Buddy Fitness Studio showing heavy workout tire, turf and lifting stations" 
+                 class="w-full h-[420px] sm:h-[480px] object-cover object-center group-hover:scale-105 transition-transform duration-700 filter brightness-90 contrast-110" />
+            
+            <!-- Real photo watermark & verified tag floating in 3D -->
+            <div class="card-3d-content absolute bottom-5 left-5 right-5 bg-surface/90 backdrop-blur-md p-4 rounded-2xl border border-border-subtle flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full bg-primary-container animate-pulse"></span>
+                <span class="text-xs sm:text-sm font-display font-bold text-white uppercase tracking-wider">
+                  Real Studio Interior • Kangeyam
+                </span>
+              </div>
+              <span class="text-[11px] text-primary-container font-mono uppercase bg-primary-container/10 px-2.5 py-1 rounded-full border border-primary-container/30 flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs">zoom_in</span>
+                <span>Enlarge</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Ambient Glow Backdrop -->
+          <div class="absolute -bottom-8 -right-8 w-72 h-72 bg-primary-container/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. FACILITIES & TRAINING EXPERIENCE WITH 3D CARDS ==================== -->
+    <section id="facilities" class="py-24 bg-surface-container-low px-5 sm:px-8 lg:px-12 border-y border-border-subtle relative z-20">
+      <div class="max-w-7xl mx-auto flex flex-col gap-16">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-3d">
+          <div class="flex flex-col gap-3">
+            <div class="inline-flex items-center gap-2">
+              <span class="w-6 h-[2px] bg-primary-container"></span>
+              <span class="text-xs sm:text-sm font-display font-extrabold text-primary-container uppercase tracking-widest">OUR CAPABILITIES</span>
+            </div>
+            <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white uppercase leading-[1.1]">
+              FACILITIES &amp; TRAINING SETUP
+            </h2>
+          </div>
+          <p class="text-sm sm:text-base text-on-surface-variant max-w-md leading-relaxed">
+            Equipped with verified professional apparatus designed to maximize hypertrophy, stamina, functional athletic agility, and raw power.
+          </p>
+        </div>
+
+        <!-- 6 Feature Cards (3D Interactive Tilt & Staggered Reveal) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 perspective-container">
+          
+          <!-- Facility 1: Strength -->
+          <div class="reveal-3d delay-75 card-3d bg-surface p-8 rounded-3xl border border-border-subtle hover:border-primary-container/50 shadow-xl flex flex-col gap-4">
+            <div class="card-3d-shine"></div>
+            <div class="card-3d-content flex flex-col gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-primary-container/10 border border-primary-container/20 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[30px]">fitness_center</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-white">Strength Training</h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Heavy-duty power racks, Olympic barbells, calibrated bumper plates, and multi-angle benches engineered for serious compound lifting.
+              </p>
+            </div>
+          </div>
+
+          <!-- Facility 2: Free Weights -->
+          <div class="reveal-3d delay-150 card-3d bg-surface p-8 rounded-3xl border border-border-subtle hover:border-primary-container/50 shadow-xl flex flex-col gap-4">
+            <div class="card-3d-shine"></div>
+            <div class="card-3d-content flex flex-col gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-primary-container/10 border border-primary-container/20 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[30px]">scale</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-white">Free Weights Arsenal</h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Expansive dumbbell racks, kettlebells, and EZ-curl bars enabling precise isolation and unrestricted functional hypertrophy movements.
+              </p>
+            </div>
+          </div>
+
+          <!-- Facility 3: Matrix Machines -->
+          <div class="reveal-3d delay-225 card-3d bg-surface p-8 rounded-3xl border border-border-subtle hover:border-primary-container/50 shadow-xl flex flex-col gap-4">
+            <div class="card-3d-shine"></div>
+            <div class="card-3d-content flex flex-col gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-primary-container/10 border border-primary-container/20 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[30px]">settings_accessibility</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-white">Matrix Fitness Machines</h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Commercial-grade Matrix cable towers, lat pulldowns, seated cable rows, and leg machines for biomechanically smooth resistance curves.
+              </p>
+            </div>
+          </div>
+
+          <!-- Facility 4: Functional Turf & Tire -->
+          <div class="reveal-3d delay-300 card-3d bg-surface p-8 rounded-3xl border border-border-subtle hover:border-primary-container/50 shadow-xl flex flex-col gap-4">
+            <div class="card-3d-shine"></div>
+            <div class="card-3d-content flex flex-col gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-primary-container/10 border border-primary-container/20 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[30px]">sprint</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-white">Turf Track &amp; Tire Conditioning</h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Dedicated indoor artificial turf strip featuring heavy tire flips, battle ropes, and plyometric jump boxes for high-intensity athletic conditioning.
+              </p>
+            </div>
+          </div>
+
+          <!-- Facility 5: Personal Training -->
+          <div class="reveal-3d delay-375 card-3d bg-surface p-8 rounded-3xl border border-border-subtle hover:border-primary-container/50 shadow-xl flex flex-col gap-4">
+            <div class="card-3d-shine"></div>
+            <div class="card-3d-content flex flex-col gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-primary-container/10 border border-primary-container/20 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[30px]">sports_kabaddi</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-white">Personal Training Support</h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                One-on-one professional mentorship focused on strict biomechanics, injury prevention, progressive overload, and consistent breakthroughs.
+              </p>
+            </div>
+          </div>
+
+          <!-- Facility 6: Beginner Friendly -->
+          <div class="reveal-3d delay-450 card-3d bg-surface p-8 rounded-3xl border border-border-subtle hover:border-primary-container/50 shadow-xl flex flex-col gap-4">
+            <div class="card-3d-shine"></div>
+            <div class="card-3d-content flex flex-col gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-primary-container/10 border border-primary-container/20 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[30px]">accessibility_new</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-white">Beginner-Friendly Programs</h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Approachable onboarding routines structured to help newcomers build gym confidence, establish healthy habits, and lift safely.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 5. TRAINERS SECTION ==================== -->
+    <section id="trainers" class="py-24 px-5 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full relative z-20">
+      <div class="reveal-3d bg-gradient-to-br from-surface-container to-surface-container-low p-8 sm:p-12 lg:p-16 rounded-3xl border border-border-light relative overflow-hidden">
+        
+        <!-- Ambient Background Glow -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+          
+          <div class="lg:col-span-7 flex flex-col gap-6">
+            <div class="inline-flex items-center gap-2">
+              <span class="w-6 h-[2px] bg-primary-container"></span>
+              <span class="text-xs sm:text-sm font-display font-extrabold text-primary-container uppercase tracking-widest">COACHING EXCELLENCE</span>
+            </div>
+
+            <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white uppercase leading-[1.1]">
+              LED BY CHAMPIONS.<br/><span class="text-primary-container">MEMBER-ACCLAIMED COACHING.</span>
+            </h2>
+
+            <p class="text-base sm:text-lg text-on-surface-variant leading-relaxed">
+              At Big Buddy Fitness Studio, your physical progress is guided by hands-on, committed mentorship. Head trainer <strong class="text-white">Mr. Gopinath</strong> and trainer <strong class="text-white">Mr. Vignesh</strong> are widely celebrated by gym members for bringing tailored coaching methodology and disciplined competition technique to every workout session.
+            </p>
+
+            <!-- Verified Review-Based Badges -->
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <div class="inline-flex items-center gap-2.5 bg-surface px-4 py-2.5 rounded-full border border-primary-container/30">
+                <span class="material-symbols-outlined text-primary-container text-[20px]">military_tech</span>
+                <span class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider font-display">
+                  Mr. Gopinath &amp; Mr. Vignesh <span class="text-on-surface-variant font-normal text-xs">(Expert Mentors)</span>
+                </span>
+              </div>
+
+              <div class="inline-flex items-center gap-2.5 bg-surface px-4 py-2.5 rounded-full border border-primary-container/30">
+                <span class="material-symbols-outlined text-primary-container text-[20px]">workspace_premium</span>
+                <span class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider font-display">
+                  Mr. Erode 2019 Winner <span class="text-on-surface-variant font-normal text-xs">(Client Member Review)</span>
+                </span>
+              </div>
+
+              <div class="inline-flex items-center gap-2.5 bg-surface px-4 py-2.5 rounded-full border border-border-light">
+                <span class="material-symbols-outlined text-primary-container text-[20px]">verified</span>
+                <span class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider font-display">
+                  Strict Form Supervision
+                </span>
+              </div>
+            </div>
+
+            <div class="pt-4">
+              <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20know%20about%20personal%20training%20and%20coaching%20with%20Mr.%20Gopinath%20and%20Mr.%20Vignesh." 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-3 bg-primary-container text-surface px-6 sm:px-8 py-3.5 rounded-full font-display font-extrabold text-sm tracking-wider uppercase hover:bg-primary-secondary transition-all shadow-lg">
+                <span class="material-symbols-outlined text-lg">chat</span>
+                <span>CONSULT WITH OUR TRAINERS</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Editorial Coaching Focus Card (3D Tilt Card) -->
+          <div class="lg:col-span-5 flex flex-col gap-4">
+            <div class="card-3d bg-surface/85 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-border-light flex flex-col gap-6 shadow-2xl">
+              <div class="card-3d-shine"></div>
+              <div class="card-3d-content flex flex-col gap-6">
+                <div class="flex items-center justify-between border-b border-border-subtle pb-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-surface font-display font-black text-lg">
+                      BB
+                    </div>
+                    <div>
+                      <h3 class="font-display font-bold text-white text-base">Mentorship Approach</h3>
+                      <p class="text-xs text-on-surface-variant">Personalized Fitness Philosophy</p>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined text-primary-container text-2xl">fitness_center</span>
+                </div>
+
+                <ul class="flex flex-col gap-3.5 text-sm text-on-surface-variant">
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span>
+                    <span><strong>Form-First Technique:</strong> Zero tolerance for improper posture to ensure joint safety and targeted muscle activation.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span>
+                    <span><strong>Progressive Overload:</strong> Structured tracking to steadily increment weights, reps, and work capacity.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span>
+                    <span><strong>Dietary &amp; Recovery Advice:</strong> Practical nutritional guidance to complement high-output gym sessions.</span>
+                  </li>
+                </ul>
+
+                <div class="bg-surface-container-high p-4 rounded-2xl border border-border-subtle flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary-container text-2xl">format_quote</span>
+                  <p class="text-xs text-on-surface-variant italic leading-relaxed">
+                    "Good trainers and effective workout and very supportive people's" — Verified Google Review
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 6. MEMBERSHIP SECTION (CULTPASS STYLE 3D CARDS) ==================== -->
+    <section id="membership" class="py-24 bg-surface-container-low px-5 sm:px-8 lg:px-12 border-y border-border-subtle relative z-20">
+      <div class="max-w-7xl mx-auto flex flex-col gap-16">
+        
+        <div class="text-center max-w-2xl mx-auto flex flex-col gap-4 reveal-3d">
+          <div class="inline-flex items-center justify-center gap-2">
+            <span class="w-6 h-[2px] bg-primary-container"></span>
+            <span class="text-xs sm:text-sm font-display font-extrabold text-primary-container uppercase tracking-widest">INVEST IN YOURSELF</span>
+            <span class="w-6 h-[2px] bg-primary-container"></span>
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white uppercase leading-[1.1]">
+            MEMBERSHIP PLANS
+          </h2>
+          <p class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+            Select the training duration that matches your lifestyle. Contact us directly via WhatsApp to receive current transparent pricing and fast onboarding.
+          </p>
+        </div>
+
+        <!-- 4 Plans Grid with Cult.fit 3D Tilt & Specular Shine -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 perspective-container">
+          
+          <!-- Plan 1: Monthly -->
+          <div class="reveal-3d delay-75 card-3d bg-surface p-7 sm:p-8 rounded-3xl flex flex-col justify-between gap-8 border border-border-subtle hover:border-primary-container/50 shadow-xl group">
+            <div class="card-3d-shine"></div>
+            <div class="card-3d-content flex flex-col gap-4">
+              <span class="text-xs font-display font-bold text-primary-container uppercase tracking-wider">Starter Tier</span>
+              <h3 class="font-display font-extrabold text-2xl text-white">Monthly Plan</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Ideal for beginners exploring regular routines or individuals seeking short-term gym access.
+              </p>
+              
+              <ul class="flex flex-col gap-2 pt-2 border-t border-border-subtle text-xs text-on-surface-variant">
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary-container text-base">check</span>
+                  <span>Full floor equipment access</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary-container text-base">check</span>
+                  <span>General coaching guidance</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card-3d-content flex flex-col gap-4">
+              <div class="bg-surface-container py-2.5 px-4 rounded-xl text-center text-xs font-semibold text-primary-container border border-primary-container/20">
+                Contact us for pricing
+              </div>
+              <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20know%20the%20pricing%20and%20details%20for%20the%20Monthly%20Membership%20plan." 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="w-full py-3 rounded-full bg-surface-container-high text-white hover:bg-primary-container hover:text-surface transition-all text-center font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                <span>Enquire via WhatsApp</span>
+                <span class="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Plan 2: Quarterly (3 Months) -->
+          <div class="reveal-3d delay-150 card-3d bg-surface p-7 sm:p-8 rounded-3xl flex flex-col justify-between gap-8 border border-border-subtle hover:border-primary-container/50 shadow-xl group">
+            <div class="card-3d-shine"></div>
+            <div class="card-3d-content flex flex-col gap-4">
+              <span class="text-xs font-display font-bold text-primary-container uppercase tracking-wider">Foundation Tier</span>
+              <h3 class="font-display font-extrabold text-2xl text-white">Quarterly Plan</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Commit to 3 focused months of strength transformation, habit formation, and visible physique results.
+              </p>
+
+              <ul class="flex flex-col gap-2 pt-2 border-t border-border-subtle text-xs text-on-surface-variant">
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary-container text-base">check</span>
+                  <span>Full floor equipment access</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary-container text-base">check</span>
+                  <span>Workout routine structure</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card-3d-content flex flex-col gap-4">
+              <div class="bg-surface-container py-2.5 px-4 rounded-xl text-center text-xs font-semibold text-primary-container border border-primary-container/20">
+                Contact us for pricing
+              </div>
+              <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20know%20the%20pricing%20and%20details%20for%20the%20Quarterly%20Membership%20plan." 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="w-full py-3 rounded-full bg-surface-container-high text-white hover:bg-primary-container hover:text-surface transition-all text-center font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                <span>Enquire via WhatsApp</span>
+                <span class="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Plan 3: Half-Yearly (6 Months) -->
+          <div class="reveal-3d delay-225 card-3d bg-surface p-7 sm:p-8 rounded-3xl flex flex-col justify-between gap-8 border border-border-subtle hover:border-primary-container/50 shadow-xl group">
+            <div class="card-3d-shine"></div>
+            <div class="card-3d-content flex flex-col gap-4">
+              <span class="text-xs font-display font-bold text-primary-container uppercase tracking-wider">Progressive Tier</span>
+              <h3 class="font-display font-extrabold text-2xl text-white">Half-Yearly Plan</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                6 months dedicated to building sustainable muscle density, explosive endurance, and disciplined athleticism.
+              </p>
+
+              <ul class="flex flex-col gap-2 pt-2 border-t border-border-subtle text-xs text-on-surface-variant">
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary-container text-base">check</span>
+                  <span>Full floor equipment access</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary-container text-base">check</span>
+                  <span>Progressive hypertrophy splits</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card-3d-content flex flex-col gap-4">
+              <div class="bg-surface-container py-2.5 px-4 rounded-xl text-center text-xs font-semibold text-primary-container border border-primary-container/20">
+                Contact us for pricing
+              </div>
+              <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20know%20about%20the%20Half-Yearly%20Membership%20plan." 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="w-full py-3 rounded-full bg-surface-container-high text-white hover:bg-primary-container hover:text-surface transition-all text-center font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                <span>Enquire via WhatsApp</span>
+                <span class="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Plan 4: Annual (12 Months - Highlighted Best Value) -->
+          <div class="reveal-3d delay-300 card-3d bg-surface-container p-7 sm:p-8 rounded-3xl flex flex-col justify-between gap-8 border-2 border-primary-container relative shadow-2xl group">
+            <div class="card-3d-shine"></div>
+            <div class="card-3d-badge absolute -top-3.5 right-6 bg-primary-container text-surface px-3.5 py-1 rounded-full text-[10px] font-display font-black uppercase tracking-wider shadow-lg">
+              Best Value
+            </div>
+
+            <div class="card-3d-content flex flex-col gap-4">
+              <span class="text-xs font-display font-bold text-primary-container uppercase tracking-wider">Ultimate Tier</span>
+              <h3 class="font-display font-extrabold text-2xl text-white">Annual Plan</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                The full 365-day commitment to an unstoppable lifestyle, maximum long-term value, and continuous coaching support.
+              </p>
+
+              <ul class="flex flex-col gap-2 pt-2 border-t border-border-subtle text-xs text-on-surface-variant">
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary-container text-base">check</span>
+                  <span>Unlimited gym &amp; turf access</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary-container text-base">check</span>
+                  <span>Priority trainer consultation</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card-3d-content flex flex-col gap-4">
+              <div class="bg-surface py-2.5 px-4 rounded-xl text-center text-xs font-semibold text-primary-container border border-primary-container/30">
+                Contact us for pricing
+              </div>
+              <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20know%20about%20the%20Annual%20Membership%20plan." 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="w-full py-3.5 rounded-full bg-primary-container text-surface hover:bg-primary-secondary transition-all text-center font-display font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg">
+                <span>Enquire via WhatsApp</span>
+                <span class="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 7. GOOGLE REVIEWS SECTION WITH 3D CARDS ==================== -->
+    <section id="reviews" class="py-24 px-5 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full flex flex-col gap-16 relative z-20">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-3d">
+        <div class="flex flex-col gap-3">
+          <div class="inline-flex items-center gap-2">
+            <span class="w-6 h-[2px] bg-primary-container"></span>
+            <span class="text-xs sm:text-sm font-display font-extrabold text-primary-container uppercase tracking-widest">VERIFIED TESTIMONIALS</span>
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white uppercase leading-[1.1]">
+            WHAT OUR MEMBERS SAY
+          </h2>
+        </div>
+
+        <a href="https://www.google.com/maps/place/Big+Buddy+fitness+studio/@11.011028,77.5532749" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 text-primary-container font-display font-bold text-sm hover:underline tracking-wide">
+          <span>Read all 35+ reviews on Google Maps</span>
+          <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+        </a>
+      </div>
+
+      <!-- 3 Verified Google Reviews Grid (3D Tilt & Staggered Reveal) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 perspective-container">
+        
+        <!-- Review 1 -->
+        <div class="reveal-3d delay-75 card-3d bg-surface-container p-8 rounded-3xl border border-border-subtle hover:border-primary-container/40 flex flex-col justify-between gap-6 shadow-xl">
+          <div class="card-3d-shine"></div>
+          <div class="card-3d-content flex flex-col gap-4">
+            <div class="flex text-primary-container">
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-base text-white italic leading-relaxed">
+              "Good trainers and effective workout and very supportive people's"
+            </p>
+          </div>
+          <div class="card-3d-content pt-4 border-t border-border-subtle flex items-center justify-between">
+            <span class="text-xs font-display font-bold text-on-surface-variant uppercase tracking-wider">— Verified Google Reviewer</span>
+            <span class="text-[11px] text-primary-container font-mono bg-primary-container/10 px-2 py-0.5 rounded">5.0 ★</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="reveal-3d delay-150 card-3d bg-surface-container p-8 rounded-3xl border border-border-subtle hover:border-primary-container/40 flex flex-col justify-between gap-6 shadow-xl">
+          <div class="card-3d-shine"></div>
+          <div class="card-3d-content flex flex-col gap-4">
+            <div class="flex text-primary-container">
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-elements: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-base text-white italic leading-relaxed">
+              "The environment is clean, hygienic, and comfortable for workouts."
+            </p>
+          </div>
+          <div class="card-3d-content pt-4 border-t border-border-subtle flex items-center justify-between">
+            <span class="text-xs font-display font-bold text-on-surface-variant uppercase tracking-wider">— Verified Google Reviewer</span>
+            <span class="text-[11px] text-primary-container font-mono bg-primary-container/10 px-2 py-0.5 rounded">5.0 ★</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="reveal-3d delay-225 card-3d bg-surface-container p-8 rounded-3xl border border-border-subtle hover:border-primary-container/40 flex flex-col justify-between gap-6 shadow-xl">
+          <div class="card-3d-shine"></div>
+          <div class="card-3d-content flex flex-col gap-4">
+            <div class="flex text-primary-container">
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-base text-white italic leading-relaxed">
+              "The best place to increase your fitness and musculanity"
+            </p>
+          </div>
+          <div class="card-3d-content pt-4 border-t border-border-subtle flex items-center justify-between">
+            <span class="text-xs font-display font-bold text-on-surface-variant uppercase tracking-wider">— Verified Google Reviewer</span>
+            <span class="text-[11px] text-primary-container font-mono bg-primary-container/10 px-2 py-0.5 rounded">5.0 ★</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== 8. IMMERSIVE GYM GALLERY WITH 3D ZOOM LIGHTBOX ==================== -->
+    <section id="gallery" class="py-24 bg-surface-container-low px-5 sm:px-8 lg:px-12 border-y border-border-subtle relative z-20">
+      <div class="max-w-7xl mx-auto flex flex-col gap-16">
+        
+        <div class="text-center max-w-2xl mx-auto flex flex-col gap-4 reveal-3d">
+          <div class="inline-flex items-center justify-center gap-2">
+            <span class="w-6 h-[2px] bg-primary-container"></span>
+            <span class="text-xs sm:text-sm font-display font-extrabold text-primary-container uppercase tracking-widest">REAL STUDIO SHOWCASE</span>
+            <span class="w-6 h-[2px] bg-primary-container"></span>
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white uppercase leading-[1.1]">
+            IMMERSIVE GYM GALLERY
+          </h2>
+          <p class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+            Real photographic glimpses inside Big Buddy Fitness Studio. Click any photo to inspect high-resolution details in the interactive lightbox.
+          </p>
+        </div>
+
+        <!-- Authentic 3-Card Creative Showcase with 3D Depth -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 perspective-container">
+          
+          <!-- Real Photo Card 1 -->
+          <div class="reveal-3d delay-75 card-3d gallery-card bg-surface rounded-3xl overflow-hidden border border-border-subtle hover:border-primary-container/50 shadow-xl group cursor-pointer flex flex-col"
+               data-index="0"
+               tabindex="0"
+               role="button"
+               aria-label="Enlarge Main Gym Floor and Turf Lane photo">
+            <div class="card-3d-shine"></div>
+            <div class="relative h-72 sm:h-80 overflow-hidden">
+              <img src="photo1.jpg" 
+                   onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Suu2AFrcag4yUgu5f8oT-7ckiOe1L6xZ26A3u7gnvON5MesPUPMbPdNGP4FrTqCXILKiGkcMnut6_P_Uj9eLXWPLFrcaM00PxQeJ_YmF55hGt0p65qR9FOubbU-QIukyg_plcISA=w446-h298-k-no';" 
+                   alt="Big Buddy Gym Floor - Matrix Fitness Machines and Turf Lane" 
+                   class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out filter brightness-95" />
+              <div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                <div class="w-14 h-14 rounded-full bg-primary-container text-surface flex items-center justify-center shadow-2xl transform scale-75 group-hover:scale-100 transition-transform">
+                  <span class="material-symbols-outlined text-[32px]">zoom_in</span>
+                </div>
+              </div>
+              <span class="card-3d-badge absolute top-4 left-4 bg-surface/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider px-3 py-1 rounded-full border border-border-subtle">
+                Real Studio Photo 1
+              </span>
+            </div>
+            <div class="card-3d-content p-6 flex flex-col gap-2">
+              <h3 class="font-display font-bold text-lg text-white">Main Gym Floor &amp; Turf Lane</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Spacious layout featuring Matrix multi-stations, functional indoor turf track, tire flip station, and free lifting areas.
+              </p>
+            </div>
+          </div>
+
+          <!-- Real Photo Card 2 -->
+          <div class="reveal-3d delay-150 card-3d gallery-card bg-surface rounded-3xl overflow-hidden border border-border-subtle hover:border-primary-container/50 shadow-xl group cursor-pointer flex flex-col"
+               data-index="1"
+               tabindex="0"
+               role="button"
+               aria-label="Enlarge Tire Flip and Conditioning Zone photo">
+            <div class="card-3d-shine"></div>
+            <div class="relative h-72 sm:h-80 overflow-hidden">
+              <img src="photo2.jpg" 
+                   onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QCInq9alkqAvRw2vce0yEQd4EHQTUssPR0NhJ0cBEqRh2qVa4BryVBIwpAiwKUnogznZiayk5ggi0c_7aglK_gX-CbPiwmGn9yNzw7oeLLyJC2WHZYFovuz63gLhD0wJJ0FLhuJA=w203-h135-k-no';" 
+                   alt="Big Buddy Heavy Conditioning and Tire Training Area" 
+                   class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out filter brightness-95" />
+              <div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                <div class="w-14 h-14 rounded-full bg-primary-container text-surface flex items-center justify-center shadow-2xl transform scale-75 group-hover:scale-100 transition-transform">
+                  <span class="material-symbols-outlined text-[32px]">zoom_in</span>
+                </div>
+              </div>
+              <span class="card-3d-badge absolute top-4 left-4 bg-surface/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider px-3 py-1 rounded-full border border-border-subtle">
+                Real Studio Photo 2
+              </span>
+            </div>
+            <div class="card-3d-content p-6 flex flex-col gap-2">
+              <h3 class="font-display font-bold text-lg text-white">Tire Flip &amp; Conditioning Zone</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Dedicated high-traction floor area for functional strength, tire flips, core drills, and power endurance workouts.
+              </p>
+            </div>
+          </div>
+
+          <!-- Setup Highlights Card (Pure CSS & Typography with 3D Depth) -->
+          <div class="reveal-3d delay-225 card-3d bg-surface p-7 sm:p-8 rounded-3xl border border-border-subtle hover:border-primary-container/40 shadow-xl flex flex-col justify-between gap-6">
+            <div class="card-3d-shine"></div>
+            <div class="card-3d-content flex flex-col gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-primary-container/10 border border-primary-container/20 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[28px]">domain</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-white">STUDIO SETUP SPECS</h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Carefully curated training apparatus configured for safety, ergonomics, and high hypertrophy output.
+              </p>
+
+              <div class="flex flex-col gap-3 pt-2">
+                <div class="flex items-center justify-between p-3 rounded-xl bg-surface-container border border-border-subtle">
+                  <span class="text-xs font-semibold text-white">Matrix Fitness Machines</span>
+                  <span class="text-xs text-primary-container font-mono">Verified</span>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-xl bg-surface-container border border-border-subtle">
+                  <span class="text-xs font-semibold text-white">Indoor Sprint &amp; Turf Track</span>
+                  <span class="text-xs text-primary-container font-mono">Installed</span>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-xl bg-surface-container border border-border-subtle">
+                  <span class="text-xs font-semibold text-white">Heavy 200kg+ Tractor Tire</span>
+                  <span class="text-xs text-primary-container font-mono">Equipped</span>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-xl bg-surface-container border border-border-subtle">
+                  <span class="text-xs font-semibold text-white">Olympic Power Racks &amp; Benches</span>
+                  <span class="text-xs text-primary-container font-mono">Available</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-3d-content">
+              <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20schedule%20a%20visit%20to%20see%20the%20gym." 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="w-full py-3 rounded-full bg-surface-container-high text-white hover:bg-primary-container hover:text-surface transition-all text-center font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">visibility</span>
+                <span>Schedule a Studio Visit</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Interactive Lightbox Modal (Fully Functional with Keyboard & Touch Support) -->
+    <div id="gallery-lightbox" 
+         class="fixed inset-0 z-50 bg-surface/95 backdrop-blur-2xl hidden flex items-center justify-center p-4 sm:p-8 transition-opacity duration-300" 
+         role="dialog" 
+         aria-modal="true" 
+         aria-label="Gym Image Lightbox">
+      
+      <!-- Close Button -->
+      <button id="lightbox-close-btn" 
+              type="button"
+              class="absolute top-6 right-6 w-12 h-12 rounded-full bg-surface-container-high border border-border-light text-white hover:text-primary-container hover:border-primary-container transition-colors flex items-center justify-center z-20 focus:outline-none"
+              aria-label="Close Lightbox">
+        <span class="material-symbols-outlined text-[32px]">close</span>
+      </button>
+
+      <!-- Previous Image Button -->
+      <button id="lightbox-prev-btn" 
+              type="button"
+              class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-surface-container-high border border-border-light text-white hover:text-primary-container hover:border-primary-container transition-colors flex items-center justify-center z-20 focus:outline-none"
+              aria-label="Previous Image">
+        <span class="material-symbols-outlined text-[32px]">chevron_left</span>
+      </button>
+
+      <!-- Next Image Button -->
+      <button id="lightbox-next-btn" 
+              type="button"
+              class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-surface-container-high border border-border-light text-white hover:text-primary-container hover:border-primary-container transition-colors flex items-center justify-center z-20 focus:outline-none"
+              aria-label="Next Image">
+        <span class="material-symbols-outlined text-[32px]">chevron_right</span>
+      </button>
+
+      <!-- Modal Content Box -->
+      <div id="lightbox-container" class="max-w-5xl w-full flex flex-col items-center gap-4 relative z-10 scale-95 transition-transform duration-300">
+        <div class="relative w-full max-h-[75vh] flex items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-border-light bg-surface-container shadow-2xl">
+          <img id="lightbox-image" 
+               src="photo1.jpg" 
+               alt="Big Buddy Fitness Gallery Preview" 
+               class="max-w-full max-h-[75vh] object-contain transition-opacity duration-300" />
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between w-full px-2 gap-2">
+          <div class="flex flex-col text-center sm:text-left">
+            <h4 id="lightbox-title" class="font-display font-bold text-white text-lg">Main Gym Floor &amp; Turf Lane</h4>
+            <p id="lightbox-caption" class="text-xs sm:text-sm text-on-surface-variant max-w-xl">
+              Spacious workout zone featuring high-density indoor turf, conditioning tire, Matrix cable machines, Olympic benches, and free weights.
+            </p>
+          </div>
+          <span id="lightbox-counter" class="text-xs font-mono text-primary-container bg-surface-container px-3 py-1 rounded-full border border-border-subtle shrink-0">
+            Photo 1 of 2
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 9 & 10. LOCATION, CONTACT, FORM & OPENING HOURS ==================== -->
+    <section id="contact" class="py-24 px-5 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full relative z-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        
+        <!-- Left Column: Contact Details & Direct Actions -->
+        <div class="lg:col-span-6 flex flex-col gap-8 reveal-left">
+          
+          <div class="flex flex-col gap-3">
+            <div class="inline-flex items-center gap-2">
+              <span class="w-6 h-[2px] bg-primary-container"></span>
+              <span class="text-xs sm:text-sm font-display font-extrabold text-primary-container uppercase tracking-widest">GET IN TOUCH</span>
+            </div>
+            <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white uppercase leading-[1.1]">
+              LOCATION &amp; CONTACT
+            </h2>
+          </div>
+
+          <div class="flex flex-col gap-6">
+            
+            <!-- Address Card -->
+            <div class="flex items-start gap-4 p-5 rounded-2xl bg-surface-container border border-border-subtle">
+              <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0">
+                <span class="material-symbols-outlined text-[24px]">location_on</span>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h3 class="font-display font-bold text-white text-base">Studio Address</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  1st Floor, Thirumagal Plazza, Tiruppur Road, above Trends, Kangeyam, Tamil Nadu 638701, India.
+                </p>
+              </div>
+            </div>
+
+            <!-- Phone Card -->
+            <div class="flex items-start gap-4 p-5 rounded-2xl bg-surface-container border border-border-subtle">
+              <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0">
+                <span class="material-symbols-outlined text-[24px]">call</span>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h3 class="font-display font-bold text-white text-base">Phone Number</h3>
+                <a href="tel:+919942556797" class="text-xs sm:text-sm text-primary-container hover:underline font-bold">
+                  +91 99425 56797
+                </a>
+              </div>
+            </div>
+
+            <!-- Google Rating Card -->
+            <div class="flex items-start gap-4 p-5 rounded-2xl bg-surface-container border border-border-subtle">
+              <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0">
+                <span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h3 class="font-display font-bold text-white text-base">Google Rating</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant">
+                  <strong class="text-white">4.7 / 5</strong> from 35 verified customer reviews
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Direct Action Buttons -->
+          <div class="flex flex-wrap gap-3 pt-2">
+            <!-- Get Directions -->
+            <a href="https://www.google.com/maps/dir/?api=1&destination=11.011028,77.5532749" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="bg-primary-container text-surface px-6 py-3.5 rounded-full font-display font-extrabold text-xs sm:text-sm tracking-wider uppercase hover:bg-primary-secondary transition-all flex items-center gap-2 shadow-lg">
+              <span class="material-symbols-outlined text-[18px]">directions</span>
+              <span>Get Directions</span>
+            </a>
+
+            <!-- Call Now -->
+            <a href="tel:+919942556797" 
+               class="bg-surface-container-high text-white px-6 py-3.5 rounded-full font-display font-bold text-xs sm:text-sm tracking-wider uppercase hover:bg-surface-container-highest border border-border-light transition-all flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px] text-primary-container">call</span>
+              <span>Call Now</span>
+            </a>
+
+            <!-- WhatsApp Enquiry -->
+            <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20know%20about%20your%20gym%20membership%20plans." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="bg-surface-container-high text-white px-6 py-3.5 rounded-full font-display font-bold text-xs sm:text-sm tracking-wider uppercase hover:bg-surface-container-highest border border-border-light transition-all flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px] text-primary-container">chat</span>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Opening Hours & Quick Membership Enquiry Form -->
+        <div class="lg:col-span-6 flex flex-col gap-8 reveal-right">
+          
+          <!-- Opening Hours Card -->
+          <div class="bg-surface-container p-8 sm:p-10 rounded-3xl border border-border-light shadow-xl flex flex-col justify-between gap-6">
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container">
+                  <span class="material-symbols-outlined text-[26px]">schedule</span>
+                </div>
+                <div>
+                  <h3 class="font-display font-extrabold text-2xl text-white uppercase">OPENING HOURS</h3>
+                  <p class="text-xs text-on-surface-variant">Plan your workout routine around our schedule.</p>
+                </div>
+              </div>
+
+              <div class="flex flex-col divide-y divide-border-subtle mt-2">
+                <div class="flex items-center justify-between py-3.5">
+                  <span class="text-sm font-semibold text-white">Monday</span>
+                  <span class="text-sm font-bold text-primary-container font-mono">Opens at 5:00 AM</span>
+                </div>
+                <div class="flex items-center justify-between py-3.5">
+                  <span class="text-sm font-semibold text-white">Tuesday – Saturday</span>
+                  <span class="text-sm text-on-surface-variant font-mono">Regular Hours (Contact to confirm)</span>
+                </div>
+                <div class="flex items-center justify-between py-3.5">
+                  <span class="text-sm font-semibold text-white">Sunday</span>
+                  <span class="text-sm font-bold text-red-400 font-mono">Closed</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-xs text-on-surface-variant italic border-t border-border-subtle pt-4">
+              * Timings may vary on festive occasions. Please call or WhatsApp ahead to confirm specific training slots.
+            </p>
+          </div>
+
+          <!-- Quick Membership Enquiry / Callback Request Form -->
+          <div class="bg-surface-container p-8 sm:p-10 rounded-3xl border border-border-light shadow-xl flex flex-col gap-6" id="enquiry-card">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[22px]">contact_support</span>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-xl text-white uppercase">QUICK MEMBERSHIP ENQUIRY</h3>
+                <p class="text-xs text-on-surface-variant">Instant WhatsApp dispatch with no server delay.</p>
+              </div>
+            </div>
+
+            <form id="membership-enquiry-form" class="flex flex-col gap-4" novalidate>
+              <!-- Name Input -->
+              <div class="flex flex-col gap-1.5">
+                <label for="enquiry-name" class="text-xs font-semibold text-on-surface uppercase tracking-wider">Your Full Name <span class="text-primary-container">*</span></label>
+                <input type="text" 
+                       id="enquiry-name" 
+                       name="name" 
+                       required
+                       placeholder="e.g. Ramesh Kumar" 
+                       class="w-full bg-surface border border-border-light rounded-xl px-4 py-3 text-sm text-white placeholder-on-surface-variant/50 focus:border-primary-container focus:outline-none transition-colors" />
+                <span id="name-error" class="hidden text-xs text-red-400 font-medium"></span>
+              </div>
+
+              <!-- Phone Input -->
+              <div class="flex flex-col gap-1.5">
+                <label for="enquiry-phone" class="text-xs font-semibold text-on-surface uppercase tracking-wider">Phone Number <span class="text-primary-container">*</span></label>
+                <input type="tel" 
+                       id="enquiry-phone" 
+                       name="phone" 
+                       required
+                       placeholder="10-digit mobile number" 
+                       class="w-full bg-surface border border-border-light rounded-xl px-4 py-3 text-sm text-white placeholder-on-surface-variant/50 focus:border-primary-container focus:outline-none transition-colors" />
+                <span id="phone-error" class="hidden text-xs text-red-400 font-medium"></span>
+              </div>
+
+              <!-- Plan Dropdown -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-1.5">
+                  <label for="enquiry-plan" class="text-xs font-semibold text-on-surface uppercase tracking-wider">Plan Interest</label>
+                  <select id="enquiry-plan" 
+                          name="plan" 
+                          class="w-full bg-surface border border-border-light rounded-xl px-3 py-3 text-sm text-white focus:border-primary-container focus:outline-none transition-colors">
+                    <option value="Monthly Plan">Monthly Plan</option>
+                    <option value="Quarterly Plan (3 Months)">Quarterly (3 Months)</option>
+                    <option value="Half-Yearly Plan (6 Months)">Half-Yearly (6 Months)</option>
+                    <option value="Annual Plan (12 Months)">Annual (12 Months)</option>
+                    <option value="Not Sure Yet / Guidance Needed">Not Sure Yet</option>
+                  </select>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                  <label for="enquiry-goal" class="text-xs font-semibold text-on-surface uppercase tracking-wider">Primary Goal</label>
+                  <select id="enquiry-goal" 
+                          name="goal" 
+                          class="w-full bg-surface border border-border-light rounded-xl px-3 py-3 text-sm text-white focus:border-primary-container focus:outline-none transition-colors">
+                    <option value="Muscle Building & Strength">Muscle Building</option>
+                    <option value="Weight Loss & Fitness">Weight Loss</option>
+                    <option value="Personal Coaching">Personal Coaching</option>
+                    <option value="Beginner Foundation">Beginner Foundation</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" 
+                      id="enquiry-submit-btn" 
+                      class="mt-2 w-full py-3.5 px-6 rounded-full bg-primary-container text-surface font-display font-extrabold text-sm tracking-wider uppercase hover:bg-primary-secondary transition-all flex items-center justify-center gap-2 shadow-lg">
+                <span class="material-symbols-outlined text-[20px]">chat</span>
+                <span>Send Enquiry via WhatsApp</span>
+              </button>
+
+              <p class="text-[11px] text-on-surface-variant text-center">
+                Submitting opens WhatsApp with your pre-filled inquiry. No data is stored on remote servers.
+              </p>
+            </form>
+
+            <!-- Success Confirmation Banner -->
+            <div id="enquiry-success-banner" class="hidden p-5 rounded-2xl bg-surface border border-primary-container/40 flex flex-col gap-3">
+              <div class="flex items-center gap-2 text-primary-container">
+                <span class="material-symbols-outlined text-2xl">check_circle</span>
+                <span class="font-display font-bold text-base text-white">Enquiry Prepared Successfully!</span>
+              </div>
+              <p id="enquiry-success-text" class="text-xs text-on-surface-variant leading-relaxed"></p>
+              <div class="flex flex-wrap gap-2 pt-1">
+                <a id="enquiry-direct-whatsapp-link" 
+                   href="#" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="px-4 py-2 rounded-full bg-primary-container text-surface text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                  <span>Open WhatsApp</span>
+                  <span class="material-symbols-outlined text-sm">open_in_new</span>
+                </a>
+                <button type="button" 
+                        id="enquiry-reset-btn" 
+                        class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold hover:text-white">
+                  Submit Another
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Real Interactive Google Maps Embed (No Fake Static Graphic) -->
+      <div class="mt-16 w-full rounded-3xl overflow-hidden border border-border-light shadow-2xl relative reveal-3d">
+        <div class="w-full h-80 sm:h-96 bg-surface-container relative">
+          <iframe 
+            title="Big Buddy Fitness Studio Kangeyam Google Maps Location"
+            src="https://maps.google.com/maps?q=11.011028,77.5532749&z=16&output=embed" 
+            class="w-full h-full border-0 filter invert-[90%] hue-rotate-180 contrast-125 brightness-90" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Floating Quick Directions Pin -->
+        <div class="absolute bottom-4 left-4 right-4 sm:right-auto bg-surface/90 backdrop-blur-md px-5 py-3 rounded-2xl border border-border-light flex items-center justify-between sm:gap-6 shadow-xl">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary-container text-2xl">pin_drop</span>
+            <div>
+              <span class="text-xs font-display font-bold text-white block">BIG BUDDY FITNESS STUDIO</span>
+              <span class="text-[11px] text-on-surface-variant">Tiruppur Road, Kangeyam</span>
+            </div>
+          </div>
+          <a href="https://www.google.com/maps/place/Big+Buddy+fitness+studio/@11.011028,77.5532749" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="text-xs font-display font-bold text-primary-container hover:underline uppercase tracking-wider shrink-0">
+            Open Maps ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 11. FINAL CTA SECTION WITH 3D DEPTH ==================== -->
+    <section class="py-24 bg-primary-container text-surface px-5 sm:px-8 lg:px-12 text-center relative overflow-hidden z-20" aria-label="Final Call to Action">
+      <!-- High Voltage Background Accents -->
+      <div class="absolute -top-32 -left-32 w-80 h-80 bg-white/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -right-32 w-80 h-80 bg-black/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-4xl mx-auto relative z-10 flex flex-col items-center gap-8 reveal-3d">
+        <h2 class="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl uppercase tracking-tight leading-[1.05]">
+          STOP WAITING.<br/>START TRAINING.
+        </h2>
+        
+        <p class="text-base sm:text-xl font-medium max-w-xl text-surface/85 leading-relaxed">
+          Take control of your strength and join Kangeyam’s dedicated fitness community today. Your future self will thank you.
+        </p>
+
+        <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20know%20about%20your%20gym%20membership%20plans." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="bg-surface text-white px-10 py-5 rounded-full font-display font-black text-sm sm:text-base tracking-wider uppercase hover:bg-surface-bright transition-all transform hover:scale-105 active:scale-95 shadow-2xl flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary-container text-[22px]">bolt</span>
+          <span>JOIN VIA WHATSAPP NOW</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="w-full bg-surface-container-low border-t border-border-subtle py-16 relative z-20">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-12">
+      
+      <!-- Column 1: Brand Info -->
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-surface-container border border-primary-container/30 flex items-center justify-center text-primary-container font-display font-black">
+            BB
+          </div>
+          <span class="text-lg font-display font-extrabold uppercase text-white tracking-tight">
+            BIG BUDDY <span class="text-primary-container">FITNESS</span>
+          </span>
+        </div>
+        <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed max-w-sm">
+          Kangeyam's premier fitness studio for strength training, athletic conditioning, Matrix machinery, and dedicated coaching.
+        </p>
+        <div class="flex items-center gap-2 text-xs text-primary-container font-mono pt-1">
+          <span class="material-symbols-outlined text-sm">verified</span>
+          <span>4.7/5 Google Rated Studio</span>
+        </div>
+      </div>
+
+      <!-- Column 2: Location & Contact -->
+      <div class="flex flex-col gap-3">
+        <span class="text-xs sm:text-sm font-display font-bold text-white uppercase tracking-wider">VISIT THE STUDIO</span>
+        <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+          1st Floor, Thirumagal Plazza, Tiruppur Road, above Trends, Kangeyam, Tamil Nadu 638701
+        </p>
+        <p class="text-xs sm:text-sm text-white font-bold mt-1">
+          Phone: <a href="tel:+919942556797" class="text-primary-container hover:underline">+91 99425 56797</a>
+        </p>
+        <a href="https://www.google.com/maps/place/Big+Buddy+fitness+studio/@11.011028,77.5532749" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="text-xs text-primary-container hover:underline inline-flex items-center gap-1 mt-1 font-semibold">
+          <span>Find us on Google Maps</span>
+          <span class="material-symbols-outlined text-xs">open_in_new</span>
+        </a>
+      </div>
+
+      <!-- Column 3: Quick Navigation -->
+      <div class="flex flex-col gap-3">
+        <span class="text-xs sm:text-sm font-display font-bold text-white uppercase tracking-wider">QUICK LINKS</span>
+        <div class="grid grid-cols-2 gap-2 text-xs sm:text-sm text-on-surface-variant">
+          <a href="#home" class="hover:text-primary-container transition-colors">Home</a>
+          <a href="#about" class="hover:text-primary-container transition-colors">About Us</a>
+          <a href="#facilities" class="hover:text-primary-container transition-colors">Facilities</a>
+          <a href="#trainers" class="hover:text-primary-container transition-colors">Trainers</a>
+          <a href="#membership" class="hover:text-primary-container transition-colors">Membership</a>
+          <a href="#reviews" class="hover:text-primary-container transition-colors">Reviews</a>
+          <a href="#gallery" class="hover:text-primary-container transition-colors">Gallery</a>
+          <a href="#contact" class="hover:text-primary-container transition-colors">Contact</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 mt-12 pt-8 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+      <span>© 2024 BIG BUDDY FITNESS STUDIO. All rights reserved.</span>
+      <span>Kangeyam, Tiruppur District, Tamil Nadu.</span>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT: CULT.FIT 3D ANIMATIONS & INTERACTIONS ==================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // ----------------------------------------------------
+      // 1. CULT.FIT SCROLL-DRIVEN HERO ZOOM-TO-TRANSITION
+      // ----------------------------------------------------
+      const heroImg = document.getElementById('hero-img');
+      const heroContent = document.getElementById('hero-content');
+      const heroSection = document.getElementById('home');
+      const progressBar = document.getElementById('scroll-progress-bar');
+
+      let ticking = false;
+
+      function onScrollUpdate() {
+        const scrolled = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+        // A. Neon Reading Progress Bar
+        if (progressBar && docHeight > 0) {
+          const progress = Math.min(100, Math.max(0, (scrolled / docHeight) * 100));
+          progressBar.style.width = progress + '%';
+        }
+
+        // B. Hero Zoom-to-Transition (Cult.fit Scroll Zoom effect)
+        if (!prefersReducedMotion && heroSection && heroImg && scrolled <= heroSection.offsetHeight + 100) {
+          const progress = Math.min(1, Math.max(0, scrolled / heroSection.offsetHeight));
+          
+          // Image scales from 1.05 to 1.35 and darkens with depth
+          const scale = 1.05 + progress * 0.32;
+          const brightness = 50 - progress * 24;
+          heroImg.style.transform = `scale3d(${scale}, ${scale}, 1)`;
+          heroImg.style.filter = `brightness(${brightness}%) contrast(125%)`;
+
+          // Content translates upward faster than background (3D Parallax)
+          if (heroContent) {
+            heroContent.style.transform = `translate3d(0, -${scrolled * 0.38}px, 0)`;
+            heroContent.style.opacity = Math.max(0, 1 - progress * 1.35);
+          }
+        }
+
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          window.requestAnimationFrame(onScrollUpdate);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      // Run once on initial load
+      onScrollUpdate();
+
+      // ----------------------------------------------------
+      // 2. CULT.FIT 3D TILT WITH INTERACTIVE SPECULAR SHINE
+      // ----------------------------------------------------
+      if (!prefersReducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        const cards3d = document.querySelectorAll('.card-3d');
+        
+        cards3d.forEach(card => {
+          let cardTicking = false;
+
+          card.addEventListener('mousemove', function(e) {
+            if (cardTicking) return;
+            cardTicking = true;
+
+            window.requestAnimationFrame(() => {
+              const rect = card.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              const centerX = rect.width / 2;
+              const centerY = rect.height / 2;
+              
+              // Max rotation: 8 degrees on X, 8 degrees on Y
+              const rotateX = ((y - centerY) / centerY) * -8;
+              const rotateY = ((x - centerX) / centerX) * 8;
+              
+              card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+              card.style.setProperty('--mouse-x', `${x}px`);
+              card.style.setProperty('--mouse-y', `${y}px`);
+              cardTicking = false;
+            });
+          });
+
+          card.addEventListener('mouseleave', function() {
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+          });
+        });
+      }
+
+      // ----------------------------------------------------
+      // 3. SCROLL REVEALS & 3D ROTATION (IntersectionObserver)
+      // ----------------------------------------------------
+      const revealElements = document.querySelectorAll('.reveal, .reveal-3d, .reveal-left, .reveal-right, .reveal-scale');
+      
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+      } else {
+        revealElements.forEach(el => el.classList.add('is-visible'));
+      }
+
+      // ----------------------------------------------------
+      // 4. NAVIGATION: Section Spy & Mobile Menu
+      // ----------------------------------------------------
+      const navSections = document.querySelectorAll('section[id]');
+      const desktopNavLinks = document.querySelectorAll('.nav-link');
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+      const menuIcon = document.getElementById('menu-icon');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      // Desktop Active Section Spy
+      if ('IntersectionObserver' in window && navSections.length && desktopNavLinks.length) {
+        const sectionObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const currentId = entry.target.getAttribute('id');
+              desktopNavLinks.forEach(link => {
+                if (link.getAttribute('data-section') === currentId) {
+                  link.classList.remove('text-on-surface-variant');
+                  link.classList.add('bg-primary-container', 'text-surface', 'font-extrabold');
+                } else {
+                  link.classList.remove('bg-primary-container', 'text-surface', 'font-extrabold');
+                  link.classList.add('text-on-surface-variant');
+                }
+              });
+            }
+          });
+        }, {
+          threshold: 0,
+          rootMargin: '-20% 0px -65% 0px'
+        });
+
+        navSections.forEach(section => sectionObserver.observe(section));
+      }
+
+      function closeMobileMenu() {
+        if (!mobileMenuDrawer || !mobileMenuBtn) return;
+        mobileMenuDrawer.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        if (menuIcon) menuIcon.innerText = 'menu';
+      }
+
+      function toggleMobileMenu() {
+        if (!mobileMenuDrawer || !mobileMenuBtn) return;
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        mobileMenuBtn.setAttribute('aria-expanded', String(!isExpanded));
+        mobileMenuDrawer.classList.toggle('hidden');
+        if (menuIcon) menuIcon.innerText = isExpanded ? 'menu' : 'close';
+      }
+
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          toggleMobileMenu();
+        });
+      }
+
+      mobileNavLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+      document.addEventListener('click', function(e) {
+        if (mobileMenuDrawer && !mobileMenuDrawer.classList.contains('hidden')) {
+          if (!mobileMenuDrawer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            closeMobileMenu();
+          }
+        }
+      });
+
+      window.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          if (mobileMenuDrawer && !mobileMenuDrawer.classList.contains('hidden')) {
+            closeMobileMenu();
+            if (mobileMenuBtn) mobileMenuBtn.focus();
+          }
+        }
+      });
+
+      // ----------------------------------------------------
+      // 5. GALLERY & INTERACTIVE LIGHTBOX
+      // ----------------------------------------------------
+      const galleryItems = [
+        {
+          src: 'photo1.jpg',
+          fallback: 'https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Suu2AFrcag4yUgu5f8oT-7ckiOe1L6xZ26A3u7gnvON5MesPUPMbPdNGP4FrTqCXILKiGkcMnut6_P_Uj9eLXWPLFrcaM00PxQeJ_YmF55hGt0p65qR9FOubbU-QIukyg_plcISA=w446-h298-k-no',
+          title: 'Main Gym Floor & Functional Turf Track',
+          caption: 'Spacious workout zone featuring high-density indoor turf, conditioning tire, Matrix cable machines, Olympic benches, and free weights.'
+        },
+        {
+          src: 'photo2.jpg',
+          fallback: 'https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QCInq9alkqAvRw2vce0yEQd4EHQTUssPR0NhJ0cBEqRh2qVa4BryVBIwpAiwKUnogznZiayk5ggi0c_7aglK_gX-CbPiwmGn9yNzw7oeLLyJC2WHZYFovuz63gLhD0wJJ0FLhuJA=w203-h135-k-no',
+          title: 'Heavy Conditioning & Tire Flip Area',
+          caption: 'Ground-level view of the dedicated functional conditioning turf featuring heavy tractor tire flips, core drill zones, and strength training stations.'
+        }
+      ];
+
+      let currentGalleryIndex = 0;
+      const lightbox = document.getElementById('gallery-lightbox');
+      const lightboxContainer = document.getElementById('lightbox-container');
+      const lightboxImg = document.getElementById('lightbox-image');
+      const lightboxTitle = document.getElementById('lightbox-title');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      const lightboxCounter = document.getElementById('lightbox-counter');
+      const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+      const lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
+      const lightboxNextBtn = document.getElementById('lightbox-next-btn');
+      const galleryCards = document.querySelectorAll('.gallery-card');
+      const aboutImgTrigger = document.getElementById('about-img-trigger');
+
+      function updateLightbox() {
+        if (!lightboxImg || !galleryItems[currentGalleryIndex]) return;
+        const item = galleryItems[currentGalleryIndex];
+        
+        lightboxImg.src = item.src;
+        lightboxImg.onerror = function() {
+          this.onerror = null;
+          this.src = item.fallback;
+        };
+        lightboxImg.alt = item.title;
+        if (lightboxTitle) lightboxTitle.innerText = item.title;
+        if (lightboxCaption) lightboxCaption.innerText = item.caption;
+        if (lightboxCounter) lightboxCounter.innerText = `Photo ${currentGalleryIndex + 1} of ${galleryItems.length}`;
+      }
+
+      function openLightbox(index) {
+        if (!lightbox) return;
+        currentGalleryIndex = index;
+        updateLightbox();
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+          if (lightboxContainer) {
+            lightboxContainer.classList.remove('scale-95');
+            lightboxContainer.classList.add('scale-100');
+          }
+        }, 10);
+        if (lightboxCloseBtn) lightboxCloseBtn.focus();
+      }
+
+      function closeLightbox() {
+        if (!lightbox) return;
+        if (lightboxContainer) {
+          lightboxContainer.classList.remove('scale-100');
+          lightboxContainer.classList.add('scale-95');
+        }
+        setTimeout(() => {
+          lightbox.classList.add('hidden');
+          document.body.style.overflow = '';
+        }, 200);
+      }
+
+      function nextImage() {
+        currentGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length;
+        updateLightbox();
+      }
+
+      function prevImage() {
+        currentGalleryIndex = (currentGalleryIndex - 1 + galleryItems.length) % galleryItems.length;
+        updateLightbox();
+      }
+
+      galleryCards.forEach(card => {
+        const idx = parseInt(card.getAttribute('data-index') || '0', 10);
+        card.addEventListener('click', () => openLightbox(idx));
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox(idx);
+          }
+        });
+      });
+
+      if (aboutImgTrigger) {
+        aboutImgTrigger.addEventListener('click', () => openLightbox(1));
+      }
+
+      if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+      if (lightboxNextBtn) lightboxNextBtn.addEventListener('click', nextImage);
+      if (lightboxPrevBtn) lightboxPrevBtn.addEventListener('click', prevImage);
+
+      if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+          if (e.target === this) {
+            closeLightbox();
+          }
+        });
+      }
+
+      window.addEventListener('keydown', function(e) {
+        if (lightbox && !lightbox.classList.contains('hidden')) {
+          if (e.key === 'Escape') {
+            closeLightbox();
+          } else if (e.key === 'ArrowRight') {
+            nextImage();
+          } else if (e.key === 'ArrowLeft') {
+            prevImage();
+          }
+        }
+      });
+
+      // ----------------------------------------------------
+      // 6. MEMBERSHIP ENQUIRY FORM & WHATSAPP DISPATCH
+      // ----------------------------------------------------
+      const enquiryForm = document.getElementById('membership-enquiry-form');
+      const nameInput = document.getElementById('enquiry-name');
+      const phoneInput = document.getElementById('enquiry-phone');
+      const planSelect = document.getElementById('enquiry-plan');
+      const goalSelect = document.getElementById('enquiry-goal');
+      const nameError = document.getElementById('name-error');
+      const phoneError = document.getElementById('phone-error');
+      const submitBtn = document.getElementById('enquiry-submit-btn');
+      const successBanner = document.getElementById('enquiry-success-banner');
+      const successText = document.getElementById('enquiry-success-text');
+      const directWhatsAppLink = document.getElementById('enquiry-direct-whatsapp-link');
+      const resetBtn = document.getElementById('enquiry-reset-btn');
+
+      if (nameInput) {
+        nameInput.addEventListener('input', () => {
+          if (nameError) nameError.classList.add('hidden');
+          nameInput.classList.remove('border-red-400');
+        });
+      }
+      if (phoneInput) {
+        phoneInput.addEventListener('input', () => {
+          if (phoneError) phoneError.classList.add('hidden');
+          phoneInput.classList.remove('border-red-400');
+        });
+      }
+
+      if (enquiryForm) {
+        enquiryForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          let isValid = true;
+          const nameVal = nameInput ? nameInput.value.trim() : '';
+          const phoneVal = phoneInput ? phoneInput.value.trim() : '';
+          const planVal = planSelect ? planSelect.value : 'Membership';
+          const goalVal = goalSelect ? goalSelect.value : 'Fitness';
+
+          if (!nameVal || nameVal.length < 2) {
+            isValid = false;
+            if (nameError) {
+              nameError.innerText = 'Please enter your full name (minimum 2 characters).';
+              nameError.classList.remove('hidden');
+            }
+            if (nameInput) nameInput.classList.add('border-red-400');
+          }
+
+          const cleanPhone = phoneVal.replace(/[^0-9]/g, '');
+          if (!cleanPhone || cleanPhone.length < 10) {
+            isValid = false;
+            if (phoneError) {
+              phoneError.innerText = 'Please enter a valid 10-digit mobile number.';
+              phoneError.classList.remove('hidden');
+            }
+            if (phoneInput) phoneInput.classList.add('border-red-400');
+          }
+
+          if (!isValid) return;
+
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75');
+            submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span><span>Preparing Enquiry...</span>';
+          }
+
+          const msg = `Hi Big Buddy Fitness Studio, my name is ${nameVal} (Phone: ${phoneVal}). I am interested in ${goalVal} under the ${planVal}. Please share the current pricing and joining details!`;
+          const encodedMsg = encodeURIComponent(msg);
+          const targetUrl = `https://wa.me/919942556797?text=${encodedMsg}`;
+
+          window.open(targetUrl, '_blank', 'noopener,noreferrer');
+
+          setTimeout(() => {
+            enquiryForm.classList.add('hidden');
+            if (successBanner && successText && directWhatsAppLink) {
+              successText.innerText = `Thank you, ${nameVal}! We have prepared your membership inquiry for ${planVal}. You can now message Mr. Gopinath, Mr. Vignesh, and our team directly on WhatsApp.`;
+              directWhatsAppLink.href = targetUrl;
+              successBanner.classList.remove('hidden');
+            }
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.classList.remove('opacity-75');
+              submitBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">chat</span><span>Send Enquiry via WhatsApp</span>';
+            }
+          }, 350);
+        });
+      }
+
+      if (resetBtn && enquiryForm && successBanner) {
+        resetBtn.addEventListener('click', () => {
+          enquiryForm.reset();
+          successBanner.classList.add('hidden');
+          enquiryForm.classList.remove('hidden');
+          if (nameInput) nameInput.focus();
+        });
+      }
+
+    });
+  </script>
+
+</body>
+</html>
