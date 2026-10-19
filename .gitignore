@@ -1,7 +1,11 @@
 # Logs and scratch scripts
 *.py
 *.log
-*.png
+screen*.png
 font_ref.jpg
 .gemini/
 __pycache__/
+
+# Allow official logo
+!logo.png
+!images/logo.png

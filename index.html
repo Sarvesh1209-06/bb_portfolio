@@ -12,8 +12,8 @@
     document.documentElement.classList.add('js');
   </script>
 
-  <!-- Favicon / Brand Monogram -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2310110F'/><path d='M28 25 h24 a16 16 0 0 1 0 32 h-24 z M28 43 h26 a16 16 0 0 1 0 32 h-26 z' fill='none' stroke='%23B7F34A' stroke-width='10' stroke-linejoin='round'/></svg>"/>
+  <!-- Favicon / Official Studio Logo -->
+  <link rel="icon" type="image/png" href="logo.png"/>
 
   <!-- Google Fonts: Outfit (Display & Headlines) + Plus Jakarta Sans (Body & Inktraps) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -352,19 +352,15 @@
     <div class="h-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
       
       <!-- Brand Logo / Wordmark -->
-      <a href="#home" class="flex items-center gap-3.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-container rounded-lg p-1" aria-label="Big Buddy Fitness Studio Home">
-        <div class="w-10 h-10 rounded-xl bg-surface-container-high border border-primary-container/30 flex items-center justify-center text-primary-container group-hover:bg-primary-container group-hover:text-surface transition-all duration-300">
-          <!-- Monogram Icon -->
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 4h7a4 4 0 0 1 0 8H6z"/>
-            <path d="M6 12h8a4 4 0 0 1 0 8H6z"/>
-          </svg>
+      <a href="#home" class="flex items-center gap-3 sm:gap-3.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-container rounded-lg p-1 shrink-0" aria-label="Big Buddy Fitness Studio Home">
+        <div class="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-primary-container/40 shadow-md group-hover:border-primary-container transition-all shrink-0 bg-surface">
+          <img src="logo.png" alt="Big Buddy Fitness Studio Official Logo" class="w-full h-full object-contain block group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div class="flex flex-col">
-          <span class="text-lg sm:text-xl font-display font-extrabold tracking-tight uppercase text-white leading-none">
+          <span class="text-base sm:text-xl font-display font-extrabold tracking-tight uppercase text-white leading-none whitespace-nowrap">
             BIG BUDDY <span class="text-primary-container">FITNESS</span>
           </span>
-          <span class="text-[10px] tracking-widest text-on-surface-variant font-bold uppercase mt-0.5">STUDIO • KANGEYAM</span>
+          <span class="text-[9px] sm:text-[10px] tracking-widest text-on-surface-variant font-bold uppercase mt-0.5 whitespace-nowrap">STUDIO • KANGEYAM</span>
         </div>
       </a>
 
@@ -382,15 +378,15 @@
       </nav>
 
       <!-- Action Buttons -->
-      <div class="flex items-center gap-3">
-        <!-- Join CTA Button -->
+      <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+        <!-- Join CTA Button (Strictly One Horizontal Line) -->
         <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20know%20about%20your%20gym%20membership%20plans." 
            target="_blank" 
            rel="noopener noreferrer" 
-           class="bg-primary-container text-surface px-5 sm:px-6 py-2.5 rounded-full font-display font-extrabold text-xs sm:text-sm tracking-wider uppercase hover:bg-primary-secondary transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-md flex items-center gap-2"
+           class="bg-primary-container text-surface px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-display font-extrabold text-xs sm:text-sm tracking-wider uppercase hover:bg-primary-secondary transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-md flex items-center gap-1.5 sm:gap-2 whitespace-nowrap shrink-0"
            aria-label="Join Big Buddy Fitness Studio on WhatsApp">
-          <span class="material-symbols-outlined text-[18px]">bolt</span>
-          <span>JOIN NOW</span>
+          <span class="material-symbols-outlined text-[16px] sm:text-[18px] shrink-0">bolt</span>
+          <span class="whitespace-nowrap">JOIN NOW</span>
         </a>
 
         <!-- Mobile Hamburger Toggle Button -->
@@ -1923,10 +1919,10 @@
       <!-- Column 1: Brand Info -->
       <div class="flex flex-col gap-4">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl bg-surface-container border border-primary-container/30 flex items-center justify-center text-primary-container font-display font-black">
-            BB
+          <div class="w-10 h-10 rounded-full overflow-hidden border border-primary-container/30 shrink-0 bg-surface">
+            <img src="logo.png" alt="Big Buddy Fitness Studio Official Logo" class="w-full h-full object-contain block" />
           </div>
-          <span class="text-lg font-display font-extrabold uppercase text-white tracking-tight">
+          <span class="text-lg font-display font-extrabold uppercase text-white tracking-tight whitespace-nowrap">
             BIG BUDDY <span class="text-primary-container">FITNESS</span>
           </span>
         </div>
