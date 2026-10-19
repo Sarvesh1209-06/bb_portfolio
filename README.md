@@ -1,7 +1,7 @@
 # BIG BUDDY FITNESS STUDIO 🏋️‍♂️⚡
 
 > Premium Gym & Fitness Studio in Kangeyam, Tamil Nadu  
-> **Live Website:** [https://sarvesh1209-06.github.io/big-buddy-fitness/](https://sarvesh1209-06.github.io/big-buddy-fitness/)
+> **Live Website:** [https://sarvesh1209-06.github.io/bb_portfolio/](https://sarvesh1209-06.github.io/bb_portfolio/)
 
 ---
 
