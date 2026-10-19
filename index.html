@@ -161,6 +161,18 @@
       transform: translateY(0);
     }
 
+        /* Transformation Cards Scroll Reveal */
+    .reveal-transformation {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-transformation.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* 3D Perspective Flip-Up entrance on scroll */
     .reveal-3d {
       opacity: 0;
@@ -265,6 +277,7 @@
     html.no-js .reveal-left,
     html.no-js .reveal-right,
     html.no-js .reveal-scale,
+    html.no-js .reveal-transformation,
     html.no-js .hero-animate-badge,
     html.no-js .hero-animate-title,
     html.no-js .hero-animate-sub,
@@ -353,6 +366,7 @@
         <a href="#facilities" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="facilities">Facilities</a>
         <a href="#trainers" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="trainers">Trainers</a>
         <a href="#membership" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="membership">Membership</a>
+        <a href="#transformations" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="transformations">Transformations</a>
         <a href="#reviews" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="reviews">Reviews</a>
         <a href="#gallery" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="gallery">Gallery</a>
         <a href="#contact" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:text-white hover:bg-surface-container transition-all" data-section="contact">Contact</a>
@@ -404,6 +418,10 @@
         </a>
         <a href="#membership" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-on-surface-variant hover:bg-surface-container-high hover:text-primary-container transition-colors">
           <span>Membership Plans</span>
+          <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        </a>
+        <a href="#transformations" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-on-surface-variant hover:bg-surface-container-high hover:text-primary-container transition-colors">
+          <span>Client Transformations</span>
           <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
         </a>
         <a href="#reviews" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-on-surface-variant hover:bg-surface-container-high hover:text-primary-container transition-colors">
@@ -1021,6 +1039,155 @@
 
       </div>
     </section>
+
+    
+    <!-- ==================== 7. CLIENT TRANSFORMATIONS SECTION ==================== -->
+    <section id="transformations" class="py-24 px-5 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full relative z-20">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto flex flex-col gap-4 mb-16 sm:mb-20 reveal-3d">
+        <div class="inline-flex items-center justify-center gap-2">
+          <span class="w-6 h-[2px] bg-primary-container"></span>
+          <span class="text-xs sm:text-sm font-display font-extrabold text-primary-container uppercase tracking-widest">REAL PEOPLE. REAL PROGRESS.</span>
+          <span class="w-6 h-[2px] bg-primary-container"></span>
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white uppercase leading-[1.1]">
+          CLIENT TRANSFORMATIONS
+        </h2>
+        <p class="text-base sm:text-lg text-on-surface-variant leading-relaxed">
+          Every transformation begins with commitment. Celebrate the dedication and progress of our fitness community.
+        </p>
+      </div>
+
+      <!-- Five-Image Vertical Scroll Experience -->
+      <div class="flex flex-col items-center gap-16 sm:gap-20 lg:gap-24 w-full">
+        
+        <!-- Transformation Grid 1 -->
+        <div class="reveal-transformation w-full max-w-3xl flex flex-col items-center">
+          <div class="w-full bg-surface-container-low/90 backdrop-blur-md p-4 sm:p-6 rounded-3xl border border-border-light shadow-2xl overflow-hidden hover:border-primary-container/40 transition-colors">
+            <div class="relative w-full rounded-2xl overflow-hidden bg-surface-container-lowest">
+              <img src="transformation1.jpg" 
+                   alt="Big Buddy Fitness Studio member transformation progress showcase - 84 KG to 68 KG" 
+                   class="w-full h-auto block rounded-2xl transition-transform duration-500 hover:scale-[1.01]" 
+                   loading="lazy" 
+                   style="width: 100%; height: auto; object-fit: contain; display: block;" />
+            </div>
+            <div class="flex items-center justify-between pt-4 px-2 text-xs text-on-surface-variant font-display">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                <span class="font-bold text-white tracking-wider uppercase text-xs sm:text-sm">MEMBER PROGRESSION #01</span>
+              </div>
+              <span class="text-[11px] sm:text-xs text-primary-container font-semibold bg-primary-container/10 px-3 py-1 rounded-full border border-primary-container/20">Verified Gym Transformation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transformation Grid 2 -->
+        <div class="reveal-transformation w-full max-w-3xl flex flex-col items-center">
+          <div class="w-full bg-surface-container-low/90 backdrop-blur-md p-4 sm:p-6 rounded-3xl border border-border-light shadow-2xl overflow-hidden hover:border-primary-container/40 transition-colors">
+            <div class="relative w-full rounded-2xl overflow-hidden bg-surface-container-lowest">
+              <img src="transformation2.jpg" 
+                   alt="Big Buddy Fitness Studio member transformation progress showcase - 49 kg to 58 kg" 
+                   class="w-full h-auto block rounded-2xl transition-transform duration-500 hover:scale-[1.01]" 
+                   loading="lazy" 
+                   style="width: 100%; height: auto; object-fit: contain; display: block;" />
+            </div>
+            <div class="flex items-center justify-between pt-4 px-2 text-xs text-on-surface-variant font-display">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                <span class="font-bold text-white tracking-wider uppercase text-xs sm:text-sm">MEMBER PROGRESSION #02</span>
+              </div>
+              <span class="text-[11px] sm:text-xs text-primary-container font-semibold bg-primary-container/10 px-3 py-1 rounded-full border border-primary-container/20">Verified Gym Transformation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transformation Grid 3 -->
+        <div class="reveal-transformation w-full max-w-3xl flex flex-col items-center">
+          <div class="w-full bg-surface-container-low/90 backdrop-blur-md p-4 sm:p-6 rounded-3xl border border-border-light shadow-2xl overflow-hidden hover:border-primary-container/40 transition-colors">
+            <div class="relative w-full rounded-2xl overflow-hidden bg-surface-container-lowest">
+              <img src="transformation3.jpg" 
+                   alt="Big Buddy Fitness Studio member transformation progress showcase - 93 kg to 75 kg" 
+                   class="w-full h-auto block rounded-2xl transition-transform duration-500 hover:scale-[1.01]" 
+                   loading="lazy" 
+                   style="width: 100%; height: auto; object-fit: contain; display: block;" />
+            </div>
+            <div class="flex items-center justify-between pt-4 px-2 text-xs text-on-surface-variant font-display">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                <span class="font-bold text-white tracking-wider uppercase text-xs sm:text-sm">MEMBER PROGRESSION #03</span>
+              </div>
+              <span class="text-[11px] sm:text-xs text-primary-container font-semibold bg-primary-container/10 px-3 py-1 rounded-full border border-primary-container/20">Verified Gym Transformation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transformation Grid 4 -->
+        <div class="reveal-transformation w-full max-w-3xl flex flex-col items-center">
+          <div class="w-full bg-surface-container-low/90 backdrop-blur-md p-4 sm:p-6 rounded-3xl border border-border-light shadow-2xl overflow-hidden hover:border-primary-container/40 transition-colors">
+            <div class="relative w-full rounded-2xl overflow-hidden bg-surface-container-lowest">
+              <img src="transformation4.jpg" 
+                   alt="Big Buddy Fitness Studio member transformation progress showcase - 114 kG to 88 KG" 
+                   class="w-full h-auto block rounded-2xl transition-transform duration-500 hover:scale-[1.01]" 
+                   loading="lazy" 
+                   style="width: 100%; height: auto; object-fit: contain; display: block;" />
+            </div>
+            <div class="flex items-center justify-between pt-4 px-2 text-xs text-on-surface-variant font-display">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                <span class="font-bold text-white tracking-wider uppercase text-xs sm:text-sm">MEMBER PROGRESSION #04</span>
+              </div>
+              <span class="text-[11px] sm:text-xs text-primary-container font-semibold bg-primary-container/10 px-3 py-1 rounded-full border border-primary-container/20">Verified Gym Transformation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transformation Grid 5 (Vertical format collage) -->
+        <div class="reveal-transformation w-full max-w-md sm:max-w-lg flex flex-col items-center">
+          <div class="w-full bg-surface-container-low/90 backdrop-blur-md p-4 sm:p-6 rounded-3xl border border-border-light shadow-2xl overflow-hidden hover:border-primary-container/40 transition-colors">
+            <div class="relative w-full rounded-2xl overflow-hidden bg-surface-container-lowest flex justify-center">
+              <img src="transformation5.jpg" 
+                   alt="Big Buddy Fitness Studio member transformation progress showcase - 88 kg to 71 kg" 
+                   class="w-full h-auto block rounded-2xl transition-transform duration-500 hover:scale-[1.01]" 
+                   loading="lazy" 
+                   style="width: 100%; height: auto; object-fit: contain; display: block; max-width: 440px;" />
+            </div>
+            <div class="flex items-center justify-between pt-4 px-2 text-xs text-on-surface-variant font-display">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                <span class="font-bold text-white tracking-wider uppercase text-xs sm:text-sm">MEMBER PROGRESSION #05</span>
+              </div>
+              <span class="text-[11px] sm:text-xs text-primary-container font-semibold bg-primary-container/10 px-3 py-1 rounded-full border border-primary-container/20">Verified Gym Transformation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Transformation Consultation CTA -->
+      <div class="reveal-transformation mt-16 sm:mt-20 w-full max-w-3xl mx-auto bg-gradient-to-r from-surface-container to-surface-container-high p-8 sm:p-10 rounded-3xl border border-primary-container/30 text-center flex flex-col items-center gap-5 shadow-2xl">
+        <div class="w-12 h-12 rounded-2xl bg-primary-container flex items-center justify-center text-surface shadow-lg">
+          <span class="material-symbols-outlined text-2xl font-bold">trending_up</span>
+        </div>
+        <div class="flex flex-col gap-2">
+          <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white uppercase">
+            READY TO START YOUR OWN JOURNEY?
+          </h3>
+          <p class="text-sm sm:text-base text-on-surface-variant max-w-lg mx-auto">
+            Work with head trainer Mr. Gopinath and Mr. Vignesh for personalized coaching, diet discipline, and measurable physique progress.
+          </p>
+        </div>
+        <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20saw%20the%20client%20transformations%20and%20I%20am%20ready%20to%20begin%20my%20own%20fitness%20journey.%20Please%20guide%20me!" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="inline-flex items-center gap-3 bg-primary-container text-surface px-8 py-3.5 rounded-full font-display font-extrabold text-sm tracking-wider uppercase hover:bg-primary-secondary transition-all shadow-lg transform hover:scale-[1.02] active:scale-[0.98]">
+          <span class="material-symbols-outlined text-lg">chat</span>
+          <span>START YOUR TRANSFORMATION TODAY</span>
+        </a>
+      </div>
+
+    </section>
+
 
     <!-- ==================== 7. GOOGLE REVIEWS SECTION WITH 3D CARDS ==================== -->
     <section id="reviews" class="py-24 px-5 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full flex flex-col gap-16 relative z-20">
@@ -1640,6 +1807,7 @@
           <a href="#facilities" class="hover:text-primary-container transition-colors">Facilities</a>
           <a href="#trainers" class="hover:text-primary-container transition-colors">Trainers</a>
           <a href="#membership" class="hover:text-primary-container transition-colors">Membership</a>
+          <a href="#transformations" class="hover:text-primary-container transition-colors">Transformations</a>
           <a href="#reviews" class="hover:text-primary-container transition-colors">Reviews</a>
           <a href="#gallery" class="hover:text-primary-container transition-colors">Gallery</a>
           <a href="#contact" class="hover:text-primary-container transition-colors">Contact</a>
@@ -1750,7 +1918,7 @@
       // ----------------------------------------------------
       // 3. SCROLL REVEALS & 3D ROTATION (IntersectionObserver)
       // ----------------------------------------------------
-      const revealElements = document.querySelectorAll('.reveal, .reveal-3d, .reveal-left, .reveal-right, .reveal-scale');
+      const revealElements = document.querySelectorAll('.reveal, .reveal-3d, .reveal-left, .reveal-right, .reveal-scale, .reveal-transformation');
       
       if ('IntersectionObserver' in window) {
         const revealObserver = new IntersectionObserver((entries, observer) => {
