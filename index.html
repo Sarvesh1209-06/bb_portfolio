@@ -1535,9 +1535,10 @@
     <section id="contact" class="py-24 px-5 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full relative z-20">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
         
-        <!-- Left Column: Contact Details & Direct Actions -->
+                <!-- Left Column: Contact Details & Studio Highlights (Balanced Height) -->
         <div class="lg:col-span-6 flex flex-col gap-8 reveal-left">
           
+          <!-- Header -->
           <div class="flex flex-col gap-3">
             <div class="inline-flex items-center gap-2">
               <span class="w-6 h-[2px] bg-primary-container"></span>
@@ -1546,77 +1547,167 @@
             <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white uppercase leading-[1.1]">
               LOCATION &amp; CONTACT
             </h2>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Kangeyam’s premier unisex fitness destination. Reach out directly for membership inquiries or visit our studio for a complete walk-through.
+            </p>
           </div>
 
-          <div class="flex flex-col gap-6">
-            
-            <!-- Address Card -->
-            <div class="flex items-start gap-4 p-5 rounded-2xl bg-surface-container border border-border-subtle">
-              <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0">
-                <span class="material-symbols-outlined text-[24px]">location_on</span>
+          <!-- Studio Address, Phone & Actions Card -->
+          <div class="bg-surface-container p-6 sm:p-8 rounded-3xl border border-border-light shadow-xl flex flex-col gap-6">
+            <div class="flex flex-col gap-5">
+              
+              <!-- Address Item -->
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-[24px]">location_on</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <span class="text-xs font-mono font-bold text-primary-container uppercase tracking-wider">Studio Address &amp; Landmark</span>
+                  <p class="text-xs sm:text-sm text-white font-medium leading-relaxed">
+                    1st Floor, Thirumagal Plazza, Tiruppur Road, above Trends, Kangeyam, Tamil Nadu 638701, India.
+                  </p>
+                  <span class="text-[11px] text-on-surface-variant">Located right above Trends showroom on the main road.</span>
+                </div>
               </div>
-              <div class="flex flex-col gap-1">
-                <h3 class="font-display font-bold text-white text-base">Studio Address</h3>
-                <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
-                  1st Floor, Thirumagal Plazza, Tiruppur Road, above Trends, Kangeyam, Tamil Nadu 638701, India.
-                </p>
+
+              <!-- Phone & Rating Row -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3 border-t border-border-subtle">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">call</span>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-[10px] text-on-surface-variant font-mono uppercase tracking-wider">Direct Hotline</span>
+                    <a href="tel:+919942556797" class="text-xs sm:text-sm text-primary-container hover:underline font-bold">
+                      +91 99425 56797
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0">
+                    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-[10px] text-on-surface-variant font-mono uppercase tracking-wider">Google Rating</span>
+                    <span class="text-xs sm:text-sm text-white font-bold">
+                      4.7 / 5.0 <span class="text-on-surface-variant font-normal text-xs">(35+ Reviews)</span>
+                    </span>
+                  </div>
+                </div>
               </div>
+
             </div>
 
-            <!-- Phone Card -->
-            <div class="flex items-start gap-4 p-5 rounded-2xl bg-surface-container border border-border-subtle">
-              <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0">
-                <span class="material-symbols-outlined text-[24px]">call</span>
-              </div>
-              <div class="flex flex-col gap-1">
-                <h3 class="font-display font-bold text-white text-base">Phone Number</h3>
-                <a href="tel:+919942556797" class="text-xs sm:text-sm text-primary-container hover:underline font-bold">
-                  +91 99425 56797
-                </a>
-              </div>
-            </div>
+            <!-- Direct Quick Action Buttons -->
+            <div class="flex flex-wrap items-center gap-2.5 pt-2 border-t border-border-subtle">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=11.011028,77.5532749" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="bg-primary-container text-surface px-5 py-2.5 rounded-full font-display font-extrabold text-xs uppercase tracking-wider hover:bg-primary-secondary transition-all flex items-center gap-1.5 shadow-md hover:scale-[1.02]">
+                <span class="material-symbols-outlined text-[16px]">directions</span>
+                <span>Get Directions</span>
+              </a>
 
-            <!-- Google Rating Card -->
-            <div class="flex items-start gap-4 p-5 rounded-2xl bg-surface-container border border-border-subtle">
-              <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0">
-                <span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
-              </div>
-              <div class="flex flex-col gap-1">
-                <h3 class="font-display font-bold text-white text-base">Google Rating</h3>
-                <p class="text-xs sm:text-sm text-on-surface-variant">
-                  <strong class="text-white">4.7 / 5</strong> from 35 verified customer reviews
-                </p>
-              </div>
-            </div>
+              <a href="tel:+919942556797" 
+                 class="bg-surface-container-high text-white px-5 py-2.5 rounded-full font-display font-bold text-xs uppercase tracking-wider hover:bg-surface-container-highest border border-border-light transition-all flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[16px] text-primary-container">call</span>
+                <span>Call Studio</span>
+              </a>
 
+              <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20know%20about%20your%20gym%20membership%20plans." 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="bg-surface-container-high text-white px-5 py-2.5 rounded-full font-display font-bold text-xs uppercase tracking-wider hover:bg-surface-container-highest border border-border-light transition-all flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[16px] text-primary-container">chat</span>
+                <span>WhatsApp</span>
+              </a>
+            </div>
           </div>
 
-          <!-- Direct Action Buttons -->
-          <div class="flex flex-wrap gap-3 pt-2">
-            <!-- Get Directions -->
-            <a href="https://www.google.com/maps/dir/?api=1&destination=11.011028,77.5532749" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="bg-primary-container text-surface px-6 py-3.5 rounded-full font-display font-extrabold text-xs sm:text-sm tracking-wider uppercase hover:bg-primary-secondary transition-all flex items-center gap-2 shadow-lg">
-              <span class="material-symbols-outlined text-[18px]">directions</span>
-              <span>Get Directions</span>
-            </a>
+          <!-- Studio Highlights & Member Amenities Card (Eliminates Empty Space & Enhances Appeal) -->
+          <div class="bg-surface-container p-6 sm:p-8 rounded-3xl border border-border-light shadow-xl flex flex-col gap-5">
+            <div class="flex items-center justify-between border-b border-border-subtle pb-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container">
+                  <span class="material-symbols-outlined text-[22px]">verified</span>
+                </div>
+                <div>
+                  <h3 class="font-display font-bold text-lg text-white uppercase">WHY TRAIN AT BIG BUDDY</h3>
+                  <p class="text-[11px] text-on-surface-variant">Kangeyam’s Premier Training Facility</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-primary-container bg-primary-container/10 px-2.5 py-1 rounded-full border border-primary-container/20">Studio Perks</span>
+            </div>
 
-            <!-- Call Now -->
-            <a href="tel:+919942556797" 
-               class="bg-surface-container-high text-white px-6 py-3.5 rounded-full font-display font-bold text-xs sm:text-sm tracking-wider uppercase hover:bg-surface-container-highest border border-border-light transition-all flex items-center gap-2">
-              <span class="material-symbols-outlined text-[18px] text-primary-container">call</span>
-              <span>Call Now</span>
-            </a>
+            <!-- Amenities 6-Item Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs text-on-surface-variant">
+              
+              <div class="flex items-start gap-2.5 bg-surface-container-high/60 p-3 rounded-xl border border-border-subtle">
+                <span class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">fitness_center</span>
+                <div>
+                  <strong class="text-white block text-xs">Heavy Iron &amp; Matrix Gear</strong>
+                  <span class="text-[11px] leading-snug">Olympic racks, cable towers &amp; dumbbell floor.</span>
+                </div>
+              </div>
 
-            <!-- WhatsApp Enquiry -->
-            <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20know%20about%20your%20gym%20membership%20plans." 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="bg-surface-container-high text-white px-6 py-3.5 rounded-full font-display font-bold text-xs sm:text-sm tracking-wider uppercase hover:bg-surface-container-highest border border-border-light transition-all flex items-center gap-2">
-              <span class="material-symbols-outlined text-[18px] text-primary-container">chat</span>
-              <span>WhatsApp</span>
-            </a>
+              <div class="flex items-start gap-2.5 bg-surface-container-high/60 p-3 rounded-xl border border-border-subtle">
+                <span class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">sprint</span>
+                <div>
+                  <strong class="text-white block text-xs">Functional Turf Track</strong>
+                  <span class="text-[11px] leading-snug">Sled push, agility &amp; conditioning tire area.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-2.5 bg-surface-container-high/60 p-3 rounded-xl border border-border-subtle">
+                <span class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">sports_gymnastics</span>
+                <div>
+                  <strong class="text-white block text-xs">Expert Mentorship</strong>
+                  <span class="text-[11px] leading-snug">Coached by Mr. Gopinath &amp; Mr. Vignesh.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-2.5 bg-surface-container-high/60 p-3 rounded-xl border border-border-subtle">
+                <span class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">ac_unit</span>
+                <div>
+                  <strong class="text-white block text-xs">Climate Controlled</strong>
+                  <span class="text-[11px] leading-snug">Fully air-conditioned workout environment.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-2.5 bg-surface-container-high/60 p-3 rounded-xl border border-border-subtle">
+                <span class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">local_parking</span>
+                <div>
+                  <strong class="text-white block text-xs">Convenient Parking</strong>
+                  <span class="text-[11px] leading-snug">Safe parking for two-wheelers &amp; four-wheelers.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-2.5 bg-surface-container-high/60 p-3 rounded-xl border border-border-subtle">
+                <span class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">diversity_3</span>
+                <div>
+                  <strong class="text-white block text-xs">Unisex Fitness Studio</strong>
+                  <span class="text-[11px] leading-snug">Safe, respectful, and motivating community.</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Walk-in Welcome Banner -->
+            <div class="bg-surface-container-lowest p-3.5 rounded-2xl border border-border-subtle flex items-center justify-between gap-3 text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                <span class="text-white font-semibold">Walk-ins Welcome:</span>
+                <span class="text-on-surface-variant hidden sm:inline">Tour our facility &amp; consult coaches anytime.</span>
+              </div>
+              <a href="https://wa.me/919942556797?text=Hi%20Big%20Buddy%20Fitness%20Studio%2C%20I%20would%20like%20to%20visit%20the%20studio%20for%20a%20walk-through." 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="text-primary-container font-bold hover:underline shrink-0 text-xs font-display">
+                Schedule Visit ↗
+              </a>
+            </div>
+
           </div>
 
         </div>
